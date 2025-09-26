@@ -1,0 +1,315 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Бронирование студии - Danov Music Studio{% endblock %}
+
+{% block extra_css %}
+<style>
+#id_phone {
+	-webkit-autofill: none !important;
+	-webkit-text-fill-color: inherit !important;
+	background-color: transparent !important;
+}
+#id_phone::-webkit-outer-spin-button,
+#id_phone::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+#id_phone:-webkit-autofill,
+#id_phone:-webkit-autofill:hover,
+#id_phone:-webkit-autofill:focus,
+#id_phone:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px white inset !important;
+	-webkit-text-fill-color: inherit !important;
+	transition: background-color 5000s ease-in-out 0s;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero" style="min-height: 45vh;">
+	<div class="hero-video-background">
+		{% load static %}
+		<video autoplay muted loop playsinline preload="none">
+			<source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+			Ваш браузер не поддерживает видео.
+		</video>
+		<div class="video-overlay"></div>
+	</div>
+	
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-8 hero-content">
+				<h1 class="display-4 fw-bold mb-4">Бронирование студии</h1>
+				<p class="lead">Забронируйте запись в нашей берлинской студии</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 mx-auto">
+				{% if selected_service_info %}
+				<div class="card mb-4">
+					<div class="card-body">
+						<div class="row align-items-center">
+							<div class="col-md-8">
+								<h4 class="card-title">{{ selected_service_info.name }}</h4>
+								<p class="card-text">{{ selected_service_info.description }}</p>
+								<div class="service-price">{{ selected_service_info.price }}</div>
+							</div>
+							<div class="col-md-4 text-end">
+								<a href="{% url 'booking:services' %}" class="btn btn-outline-light">
+									<i class="fas fa-arrow-left me-2"></i>Изменить услугу
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				
+				{% if available_dates %}
+				<div class="card mb-4">
+					<div class="card-body">
+						<h5 class="card-title"><i class="fas fa-calendar-check me-2"></i>Доступное время</h5>
+						<p class="card-text">Выберите удобные дату и время:</p>
+						<div class="row">
+							{% for date_info in available_dates %}
+							<div class="col-md-6 mb-3">
+								<div class="card booking-date-card">
+									<div class="card-body">
+										<h6 class="card-title">{{ date_info.date|date:"l, F j" }}</h6>
+										<div class="d-flex flex-wrap gap-2">
+											{% for time_slot in date_info.times %}
+											{% if time_slot.status == 'available' %}
+											<button class="btn btn-outline-primary btn-sm time-slot" data-date="{{ date_info.date|date:'Y-m-d' }}" data-time="{{ time_slot.time }}" title="Доступно">{{ time_slot.time }}</button>
+											{% else %}
+											<button class="btn btn-outline-primary btn-sm time-slot-{{ time_slot.status }}" disabled title="{{ time_slot.reason }}">{{ time_slot.time }}</button>
+											{% endif %}
+											{% endfor %}
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				
+				<div class="booking-form">
+					<h3><i class="fas fa-calendar-plus me-2"></i>Форма бронирования</h3>
+					<form id="bookingForm" method="post">
+						{% csrf_token %}
+						<div id="alertContainer"></div>
+						<div class="row">
+							<div class="col-md-6 mb-3">
+								<label for="{{ form.name.id_for_label }}" class="form-label"><i class="fas fa-user me-2"></i>Ваше имя *</label>
+								{{ form.name }}
+								{% if form.name.errors %}
+								<div class="text-danger small">{{ form.name.errors.0 }}</div>
+								{% endif %}
+							</div>
+							<div class="col-md-6 mb-3">
+								<label for="{{ form.email.id_for_label }}" class="form-label"><i class="fas fa-envelope me-2"></i>Email *</label>
+								{{ form.email }}
+								{% if form.email.errors %}
+								<div class="text-danger small">{{ form.email.errors.0 }}</div>
+								{% endif %}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 mb-3">
+								<label for="{{ form.phone.id_for_label }}" class="form-label"><i class="fas fa-phone me-2"></i>Телефон *</label>
+								{{ form.phone }}
+								{% if form.phone.errors %}
+								<div class="text-danger small">{{ form.phone.errors.0 }}</div>
+								{% endif %}
+							</div>
+							<div class="col-md-6 mb-3">
+								<label for="{{ form.service.id_for_label }}" class="form-label"><i class="fas fa-cogs me-2"></i>Услуга *</label>
+								{{ form.service }}
+								{% if form.service.errors %}
+								<div class="text-danger small">{{ form.service.errors.0 }}</div>
+								{% endif %}
+								{% if selected_service %}
+								<div class="text-success small mt-1"><i class="fas fa-check-circle me-1"></i>Предвыбрано: {{ selected_service|title }}</div>
+								{% endif %}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 mb-3">
+								<label for="{{ form.date.id_for_label }}" class="form-label"><i class="fas fa-calendar me-2"></i>Дата *</label>
+								{{ form.date }}
+								{% if form.date.errors %}
+								<div class="text-danger small">{{ form.date.errors.0 }}</div>
+								{% endif %}
+							</div>
+							<div class="col-md-6 mb-3">
+								<label for="{{ form.time.id_for_label }}" class="form-label"><i class="fas fa-clock me-2"></i>Время *</label>
+								{{ form.time }}
+								{% if form.time.errors %}
+								<div class="text-danger small">{{ form.time.errors.0 }}</div>
+								{% endif %}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 mb-3">
+								<label for="{{ form.duration.id_for_label }}" class="form-label"><i class="fas fa-hourglass-half me-2"></i>Длительность *</label>
+								{{ form.duration }}
+								{% if form.duration.errors %}
+								<div class="text-danger small">{{ form.duration.errors.0 }}</div>
+								{% endif %}
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="{{ form.message.id_for_label }}" class="form-label"><i class="fas fa-comment me-2"></i>Дополнительная информация</label>
+							{{ form.message }}
+							{% if form.message.errors %}
+							<div class="text-danger small">{{ form.message.errors.0 }}</div>
+							{% endif %}
+						</div>
+                        {% if captcha_enabled %}
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-shield-alt me-2"></i>Проверка безопасности *</label>
+                            {{ form.captcha }}
+                            {% if form.captcha.errors %}
+                            <div class="text-danger small">{{ form.captcha.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+
+                        <div class="loading" id="loading">
+							<div class="spinner"></div>
+							<p>Отправка запроса на бронирование...</p>
+						</div>
+						<div class="text-center">
+							<button type="submit" class="btn btn-primary btn-lg" id="submitBtn"><i class="fas fa-paper-plane me-2"></i>Отправить запрос</button>
+						</div>
+					</form>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-4">
+						<div class="card text-center h-100">
+							<div class="card-body">
+								<div class="service-icon"><i class="fas fa-clock"></i></div>
+								<h5 class="card-title">Часы работы</h5>
+								<p class="card-text">Пн–Пт: 9:00–21:30<br>Сб: Закрыто<br>Вс: Закрыто</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card text-center h-100">
+							<div class="card-body">
+								<div class="service-icon"><i class="fas fa-phone"></i></div>
+								<h5 class="card-title">Связаться</h5>
+								<p class="card-text">+49 175 413 75 18</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card text-center h-100">
+							<div class="card-body">
+								<div class="service-icon"><i class="fas fa-map-marker-alt"></i></div>
+								<h5 class="card-title">Локация студии</h5>
+								<p class="card-text">Берлин, Германия</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	const phoneField = document.getElementById('id_phone');
+	if (phoneField) {
+		phoneField.setAttribute('autocomplete', 'off');
+		phoneField.setAttribute('data-lpignore', 'true');
+	}
+	const serviceSelect = document.getElementById('id_service');
+	const urlParams = new URLSearchParams(window.location.search);
+	const selectedService = urlParams.get('service');
+	if (selectedService && serviceSelect) {
+		localStorage.setItem('selectedService', selectedService);
+		for (let option of serviceSelect.options) {
+			if (option.value === selectedService) { option.selected = true; break; }
+		}
+		serviceSelect.style.borderColor = '#28a745';
+		serviceSelect.style.boxShadow = '0 0 0 0.2rem rgba(40, 167, 69, 0.25)';
+		serviceSelect.scrollIntoView({ behavior: 'smooth', block: 'center' });
+	} else if (serviceSelect) {
+		const savedService = localStorage.getItem('selectedService');
+		if (savedService) {
+			for (let option of serviceSelect.options) {
+				if (option.value === savedService) { option.selected = true; break; }
+			}
+			serviceSelect.style.borderColor = '#28a745';
+			serviceSelect.style.boxShadow = '0 0 0 0.2rem rgba(40, 167, 69, 0.25)';
+			serviceSelect.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}
+	}
+	const timeSlots = document.querySelectorAll('.time-slot');
+	const dateInput = document.getElementById('id_date');
+	const timeInput = document.getElementById('id_time');
+	timeSlots.forEach(slot => {
+		slot.addEventListener('click', function() {
+			timeSlots.forEach(s => s.classList.remove('btn-primary'));
+			timeSlots.forEach(s => s.classList.add('btn-outline-primary'));
+			this.classList.remove('btn-outline-primary');
+			this.classList.add('btn-primary');
+			dateInput.value = this.dataset.date;
+			timeInput.value = this.dataset.time;
+		});
+	});
+	const form = document.getElementById('bookingForm');
+	const submitBtn = document.getElementById('submitBtn');
+	const loading = document.getElementById('loading');
+	const alertContainer = document.getElementById('alertContainer');
+	let isSubmitting = false;
+	form.addEventListener('submit', function(e) {
+		e.preventDefault();
+		if (isSubmitting) { return false; }
+		isSubmitting = true;
+		submitBtn.style.display = 'none';
+		loading.style.display = 'block';
+		fetch('', { method: 'POST', body: new FormData(form), headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+		.then(response => response.json())
+		.then(data => {
+			if (data.success) {
+				alertContainer.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
+				form.reset();
+				localStorage.removeItem('selectedService');
+			} else {
+				alertContainer.innerHTML = `<div class=\"alert alert-danger\">${data.message}</div>`;
+			}
+		})
+		.catch(() => {
+			alertContainer.innerHTML = `<div class=\"alert alert-danger\">Ошибка отправки запроса. Попробуйте снова.</div>`;
+		})
+		.finally(() => {
+			submitBtn.style.display = 'block';
+			loading.style.display = 'none';
+			isSubmitting = false;
+		});
+	});
+});
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "Как забронировать сессию?","acceptedAnswer": {"@type": "Answer","text": "Выберите дату, время и длительность в форме бронирования и отправьте запрос."}},
+    {"@type": "Question","name": "Можно ли отменить или перенести?","acceptedAnswer": {"@type": "Answer","text": "Да. Свяжитесь с нами заранее для отмены или переноса."}},
+    {"@type": "Question","name": "Какие способы оплаты?","acceptedAnswer": {"@type": "Answer","text": "Принимаем безналичную оплату, по запросу выставляем счета."}}
+  ]
+}
+</script>
+{% endblock %}

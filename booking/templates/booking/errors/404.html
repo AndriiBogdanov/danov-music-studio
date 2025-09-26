@@ -1,0 +1,38 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Page Not Found - Danov Music Studio{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="error-page">
+                <h1 class="display-1">404</h1>
+                <h2 class="mb-4">Page Not Found</h2>
+                <p class="lead">The page you are looking for doesn't exist.</p>
+                <p>It might have been moved, deleted, or you entered a wrong URL.</p>
+                <a href="{% url 'home' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-home me-2"></i>Return to Home
+                </a>
+                <a href="{% url 'booking' %}" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-calendar-plus me-2"></i>Book Studio
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-page {
+    padding: 50px 0;
+}
+.error-page h1 {
+    font-size: 6rem;
+    color: #dc3545;
+    font-weight: bold;
+}
+.error-page h2 {
+    color: #6c757d;
+}
+</style>
+{% endblock %} 

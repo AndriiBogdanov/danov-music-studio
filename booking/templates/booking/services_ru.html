@@ -1,0 +1,286 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Услуги - Danov Music Studio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero" style="min-height: 45vh;">
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="display-4 fw-bold mb-4">Наши услуги</h1>
+                <p class="lead fw-bold">Профессиональные услуги звукозаписи в Берлине</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Студийные услуги</h2>
+        <p class="section-subtitle">Профессиональные услуги для ваших музыкальных проектов · <a href="{% url 'booking:faq' %}" class="link-light">Больше ответов — в FAQ</a></p>
+        <div class="row g-4">
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                {% load static %}
+                <div class="service-image"><img src="{% static 'images/recording.png' %}" alt="Запись" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Запись</h5>
+                <div class="service-price mb-3">70€/час</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🎤 Точная запись — звучите как ПРО. Профессиональная запись на качественном оборудовании.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Профессиональные микрофоны</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Акустическая обработка</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Базовая обработка</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Компрессия и эквалайзер</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=recording" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mixing.png' %}" alt="Сведение" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Сведение</h5>
+                <div class="service-price mb-3">от 200€</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">После — +10€ за дорожку/инструмент. Дублирующиеся дорожки — 5€/трек.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Баланс уровней</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Панорамирование</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>EQ и компрессия</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Эффекты и реверберация</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=mixing" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mastering.png' %}" alt="Мастеринг" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-compact-disc"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Мастеринг</h5>
+                <div class="service-price mb-3">50€/час</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🚀 Громко, чисто и готово к релизу — профессиональный мастеринг.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Финальная эквализация</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Мультибэнд‑компрессия</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Лимитирование</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Подготовка к релизу</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=mastering" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Music Production.png' %}" alt="Продакшн" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-music"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Музыкальный продакшн</h5>
+                <div class="service-price mb-3">от 400€</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🎶 От идеи до хита — индивидуальный продакшн.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Аранжировки под заказ</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Аккордовые последовательности</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Инструментовка</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Полный продакшн</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=production" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/vocal cleanup.png' %}" alt="Vocal Cleanup" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-magic"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Vocal Cleanup</h5>
+                <div class="service-price mb-3">от 100€ до 200€</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Warping и тюнинг — профессиональная чистка и обработка вокала.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Шумоподавление</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Настройка интонации</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Контроль дыхания</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Финальный полиш</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=vocal_cleanup" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/vocal tuning.png' %}" alt="Vocal Tuning" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-wave-square"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Vocal Tuning</h5>
+                <div class="service-price mb-3">100€/час</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🎶 Идеальная точность и естественность — профессиональный тюнинг вокала.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Коррекция высоты</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Естественная настройка</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Melodyne/Auto‑Tune</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Профессиональный результат</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=vocal_tuning" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать</a></div>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section faq-section">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-question-circle me-3" style="color: var(--accent-color);"></i>
+            FAQ
+        </h2>
+        <p class="section-subtitle">Часто задаваемые вопросы о наших услугах</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="service-card">
+                    <div class="accordion" id="faqServicesRu">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="ruq1h">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ruq1">
+                                    Сколько стоит сведение?
+                                </button>
+                            </h2>
+                            <div id="ruq1" class="accordion-collapse collapse show" data-bs-parent="#faqServicesRu">
+                                <div class="accordion-body">
+                                    Сведение от 200€ и зависит от количества дорожек и сложности проекта.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="ruq2h">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ruq2">
+                                    Что входит в мастеринг?
+                                </button>
+                            </h2>
+                            <div id="ruq2" class="accordion-collapse collapse" data-bs-parent="#faqServicesRu">
+                                <div class="accordion-body">
+                                    Финальный EQ, мультибэнд‑компрессия, лимитирование и подготовка к релизу.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="ruq3h">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ruq3">
+                                    Можно ли забронировать несколько часов?
+                                </button>
+                            </h2>
+                            <div id="ruq3" class="accordion-collapse collapse" data-bs-parent="#faqServicesRu">
+                                <div class="accordion-body">
+                                    Да. Выберите длительность в форме бронирования или сообщите нам пожелания.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <a href="{% url 'booking:faq' %}" class="btn btn-outline-light">
+                            <i class="fas fa-arrow-right me-2"></i>
+                            Больше ответов — в FAQ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary); padding: 3rem 0;">
+    <div class="container">
+        <h2 class="section-title mb-3">Аренда студии</h2>
+        <p class="section-subtitle mb-5">Выберите оптимальный вариант под задачу</p>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-5 col-md-6"><div class="service-card rental-card text-center h-100">
+                <div class="service-icon mb-3"><i class="fas fa-clock"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Почасовая оплата</h5>
+                <div class="service-price mb-3">70€/час</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">⏱️ Профессиональная запись и базовая обработка за час.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Профессиональная запись</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Базовая обработка</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Оборудование включено</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Помощь инженера</li>
+                </ul>
+                <div class="text-center mt-auto"><a href="{% url 'booking:booking' %}?service=hourly" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать</a></div>
+            </div></div>
+            <div class="col-lg-5 col-md-6"><div class="service-card rental-card text-center h-100">
+                <div class="service-icon mb-3"><i class="fas fa-building"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Дневная аренда</h5>
+                <div class="service-price mb-3">450€/день</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🏢 Ваша студия — ваше время. Полный доступ на день.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>12 часов студии</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Полный доступ к оборудованию</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Профессиональный инженер</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Полный продакшн</li>
+                </ul>
+                <div class="text-center mt-auto"><a href="{% url 'booking:booking' %}?service=daily" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать</a></div>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding: 3rem 0;">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6"><div class="card text-center h-100"><div class="card-body">
+                <div class="info-icon mb-3"><i class="fas fa-clock"></i></div>
+                <h3 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">График работы</h3>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">⏰ Гибкий график под ваши задачи</p>
+                <div class="schedule-list">
+                    <div class="schedule-item"><span class="schedule-day">Понедельник — Пятница</span><span class="schedule-time">9:00 - 21:30</span></div>
+                    <div class="schedule-item"><span class="schedule-day">Суббота</span><span class="schedule-time closed">Выходной</span></div>
+                    <div class="schedule-item"><span class="schedule-day">Воскресенье</span><span class="schedule-time closed">Выходной</span></div>
+                </div>
+            </div></div></div>
+            <div class="col-lg-4 col-md-6"><div class="card text-center h-100"><div class="card-body">
+                <div class="info-icon mb-3"><i class="fas fa-address-book"></i></div>
+                <h3 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Свяжитесь с нами</h3>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">📞 Бронирование и вопросы</p>
+                <div class="contact-list">
+                    <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span class="contact-text">Bonifaziusstraße 16-18, 13509 Berlin, Germany</span></div>
+                    <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span class="contact-text">danovmusic@gmail.com</span></div>
+                    <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span class="contact-text">+49 175 413 75 18</span></div>
+                </div>
+            </div></div></div>
+            <div class="col-lg-4 col-md-6"><div class="card text-center h-100"><div class="card-body">
+                <div class="info-icon mb-3"><i class="fas fa-map-marker-alt"></i></div>
+                <h3 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Расположение студии</h3>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">📍 Мы в Берлине</p>
+                <div class="contact-list"><div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span class="contact-text">Bonifaziusstraße 16-18, 13509 Berlin, Germany</span></div></div>
+            </div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary); padding: 2.5rem 0;">
+    <div class="container"><div class="row"><div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-title mb-3">Готовы начать?</h2>
+        <p class="section-subtitle mb-4">Забронируйте время в студии и создавайте профессиональную музыку</p>
+        <a href="{% url 'booking:booking' %}" class="btn btn-primary btn-lg"><i class="fas fa-calendar-plus me-2"></i>Забронировать студию</a>
+    </div></div></div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "Сколько стоит сведение?","acceptedAnswer": {"@type": "Answer","text": "Сведение от 200€ и зависит от количества дорожек и сложности проекта."}},
+    {"@type": "Question","name": "Что входит в мастеринг?","acceptedAnswer": {"@type": "Answer","text": "Финальный EQ, мультибэнд‑компрессия, лимитирование и подготовка к релизу."}},
+    {"@type": "Question","name": "Можно ли забронировать несколько часов?","acceptedAnswer": {"@type": "Answer","text": "Да. Выберите длительность в форме бронирования или сообщите нам пожелания."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "Service","name": "Запись","areaServed": "Berlin","serviceType": "Recording","description": "Профессиональная запись на премиум оборудовании","offers": {"@type": "Offer","priceCurrency": "EUR","price": "70","unitCode": "HUR"}},
+    {"@type": "Service","name": "Сведение","areaServed": "Berlin","serviceType": "Mixing","description": "Коммерческий микс с балансом, EQ, компрессией и эффектами","offers": {"@type": "Offer","priceCurrency": "EUR","price": "200","priceSpecification": {"@type": "PriceSpecification","price": "200","priceCurrency": "EUR","name": "from"}}},
+    {"@type": "Service","name": "Мастеринг","areaServed": "Berlin","serviceType": "Mastering","description": "Громко, чисто и готово к релизу","offers": {"@type": "Offer","priceCurrency": "EUR","price": "50","unitCode": "HUR"}},
+    {"@type": "Service","name": "Музыкальный продакшн","areaServed": "Berlin","serviceType": "Music Production","description": "От идеи до готового трека — кастомный продакшн","offers": {"@type": "Offer","priceCurrency": "EUR","price": "400","priceSpecification": {"@type": "PriceSpecification","price": "400","priceCurrency": "EUR","name": "from"}}}
+  ]
+}
+</script>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Server Error - Danov Music Studio{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="error-page">
+                <h1 class="display-1">500</h1>
+                <h2 class="mb-4">Internal Server Error</h2>
+                <p class="lead">Something went wrong on our end.</p>
+                <p>We're working to fix the issue. Please try again later.</p>
+                <a href="{% url 'home' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-home me-2"></i>Return to Home
+                </a>
+                <a href="{% url 'contact' %}" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-envelope me-2"></i>Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-page {
+    padding: 50px 0;
+}
+.error-page h1 {
+    font-size: 6rem;
+    color: #dc3545;
+    font-weight: bold;
+}
+.error-page h2 {
+    color: #6c757d;
+}
+</style>
+{% endblock %} 

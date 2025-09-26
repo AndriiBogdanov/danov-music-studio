@@ -1,0 +1,66 @@
+{% extends 'booking/base.html' %}
+{% block title %}FAQ - Danov Music Studio{% endblock %}
+{% block content %}
+<section class="hero" style="min-height: 35vh;">
+	<div class="hero-video-background">
+		{% load static %}
+		<video autoplay muted loop playsinline preload="none">
+			<source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+		</video>
+		<div class="video-overlay"></div>
+	</div>
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-9 hero-content">
+				<h1 class="display-5 fw-bold mb-3">FAQ</h1>
+				<p class="lead">Відповіді на питання про бронювання, послуги та оплату</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section">
+	<div class="container">
+		<div class="row g-4">
+			<div class="col-lg-8">
+				<div class="service-card p-4">
+					<div class="service-icon"><i class="fas fa-circle-question"></i></div>
+					<h2 class="section-title mb-3">Загальне</h2>
+					<div class="accordion" id="faqGeneralUk">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="ug1h"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ug1">Як забронювати сесію?</button></h2>
+							<div id="ug1" class="accordion-collapse collapse show" data-bs-parent="#faqGeneralUk"><div class="accordion-body">Перейдіть у Бронювання, оберіть дату, час, тривалість і надішліть запит.</div></div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="ug2h"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ug2">Чи можна скасувати або перенести?</button></h2>
+							<div id="ug2" class="accordion-collapse collapse" data-bs-parent="#faqGeneralUk"><div class="accordion-body">Так, завчасно зв'яжіться з нами для скасування або перенесення.</div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="card p-3">
+					<h5 class="mb-3">Потрібна допомога?</h5>
+					<p>Напишіть нам або забронюйте 10‑хв консультацію.</p>
+					<a href="{% url 'booking:contact' %}" class="btn btn-outline-primary btn-sm">Контакти</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% block extra_js %}
+{{ block.super }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "Як забронювати сесію?","acceptedAnswer": {"@type": "Answer","text": "Перейдіть у Бронювання, оберіть дату, час, тривалість і надішліть запит."}},
+    {"@type": "Question","name": "Чи можна скасувати або перенести?","acceptedAnswer": {"@type": "Answer","text": "Так, завчасно зв'яжіться з нами для скасування або перенесення."}}
+  ]
+}
+</script>
+{% endblock %}
+{% endblock %}
+

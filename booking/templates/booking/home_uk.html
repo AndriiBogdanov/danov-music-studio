@@ -1,0 +1,167 @@
+{% extends 'booking/base.html' %}
+{% load static %}
+
+{% block title %}Danov Music Studio - Берлін{% endblock %}
+{% block body_class %}home-page{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-video-background">
+        <video autoplay muted loop playsinline preload="none" poster="{% static 'images/studio-bg.jpg' %}">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Ваш браузер не підтримує відео.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col-lg-6 hero-content">
+                <h1 class="display-4 fw-bold mb-4">Створюйте <span class="text-gradient">професійний звук</span> для ваших проєктів</h1>
+                <p class="lead mb-4">Професійна музична студія в Берліні для запису, зведення та мастерингу. Сучасне обладнання та досвідчені інженери допоможуть втілити ваші музичні ідеї.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="{% url 'booking:booking' %}" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронювати студію</a>
+                    <a href="{% url 'booking:services' %}" class="btn btn-outline-light"><i class="fas fa-list me-2"></i>Наші послуги</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-image" style="margin-top: 0.5rem;">
+                    <img src="{% static 'images/Logo1.png' %}" alt="Danov Music Studio" class="img-fluid" loading="lazy" style="max-width: 600px; width: 100%; height: auto; filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 30px rgba(139, 92, 246, 0.4)) drop-shadow(0 0 60px rgba(139, 92, 246, 0.2));">
+                    <h3 class="text-white" style="margin-top: -10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(139, 92, 246, 0.3), 0 0 45px rgba(139, 92, 246, 0.2);">Музична продакшн‑студія</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Чому обирають нас</h2>
+        <p class="section-subtitle">Професійний підхід до кожного проєкту</p>
+        <div class="row g-3">
+            <div class="col-lg-4 col-md-6"><div class="card h-100"><div class="card-body text-center">
+                <div class="service-icon"><i class="fas fa-microphone"></i></div>
+                <h5 class="card-title">Професійний запис</h5>
+                <p class="card-text">Використовуємо тільки якісне обладнання для чистого та прозорого звуку</p>
+            </div></div></div>
+            <div class="col-lg-4 col-md-6"><div class="card h-100"><div class="card-body text-center">
+                <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                <h5 class="card-title">Зведення та мастеринг</h5>
+                <p class="card-text">Досвідчені інженери створюють збалансоване комерційне звучання</p>
+            </div></div></div>
+            <div class="col-lg-4 col-md-6"><div class="card h-100"><div class="card-body text-center">
+                <div class="service-icon"><i class="fas fa-clock"></i></div>
+                <h5 class="card-title">Гнучкий графік</h5>
+                <p class="card-text">Працюємо у зручний час, включно з вихідними та святами</p>
+            </div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <h2 class="section-title">Наші послуги</h2>
+        <p class="section-subtitle">Повний спектр для ваших музичних проєктів</p>
+        <div class="row g-2">
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/recording.png' %}" alt="Запис" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h5>Запис</h5>
+                <div class="service-price">70€/год</div>
+                <p>🎤 Точний запис — звучіть як ПРО</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mixing.png' %}" alt="Зведення" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                <h5>Зведення</h5>
+                <div class="service-price">від 200€</div>
+                <p>Професійне зведення для комерційного звучання</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mastering.png' %}" alt="Мастеринг" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-compact-disc"></i></div>
+                <h5>Мастеринг</h5>
+                <div class="service-price">50€/год</div>
+                <p>🚀 Гучно, чисто та готово до релізу</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Music Production.png' %}" alt="Продакшн" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-music"></i></div>
+                <h5>Музичний продакшн</h5>
+                <div class="service-price">від 400€</div>
+                <p>🎶 Від ідеї до хіта — індивідуальний продакшн</p>
+            </div></div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'booking:services' %}" class="btn btn-primary"><i class="fas fa-list me-2"></i>Усі послуги</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title text-start">Про нашу студію</h2>
+                <p class="lead mb-2">Danov Music Studio — сучасна студія в Берліні з професійним обладнанням для якісної музики.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Професійне обладнання</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Досвідчені інженери</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Зручне розташування в Берліні</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Конкурентні ціни</li>
+                </ul>
+                <a href="{% url 'booking:about' %}" class="btn btn-outline-light"><i class="fas fa-info-circle me-2"></i>Дізнатися більше</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="card"><div class="card-body text-center">
+                    <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h5 class="card-title">Наше обладнання</h5>
+                    <p class="card-text">Ми використовуємо професійне обладнання провідних виробників для максимальної якості звуку.</p>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title text-start">Знайомтесь: продюсер</h2>
+                <h3 class="text-accent mb-2">Нікіта Богданов (DANOV)</h3>
+                <p class="lead mb-3">Музичний продюсер і діджей з 17+ роками досвіду в електронній музиці, зведенні та мастерингу. Раніше учасник дуету Ost & Meyer.</p>
+                <a href="{% url 'booking:about' %}" class="btn btn-outline-light"><i class="fas fa-user-tie me-2"></i>Повна біографія</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-2">
+                    <div class="col-md-6"><div class="team-photo"><img src="{% static 'images/Nikita1.png' %}" alt="Nikita Bogdanov" class="img-fluid rounded"></div></div>
+                    <div class="col-md-6"><div class="team-photo"><img src="{% static 'images/Nikita2.png' %}" alt="Nikita Bogdanov Studio" class="img-fluid rounded"></div></div>
+                </div>
+                <div class="card mt-3"><div class="card-body text-center">
+                    <div class="service-icon"><i class="fas fa-award"></i></div>
+                    <h5 class="card-title">17+ років досвіду</h5>
+                    <p class="card-text">Професійний продакшн з міжнародним визнанням</p>
+                    <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <span class="badge bg-primary">Electronic Music</span>
+                        <span class="badge bg-primary">Mixing</span>
+                        <span class="badge bg-primary">Mastering</span>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row"><div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-title">Готові почати?</h2>
+            <p class="section-subtitle">Звʼяжіться з нами або забронюйте студію просто зараз</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="{% url 'booking:booking' %}" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронювати</a>
+                <a href="{% url 'booking:contact' %}" class="btn btn-outline-light"><i class="fas fa-envelope me-2"></i>Контакти</a>
+            </div>
+        </div></div>
+    </div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Development files
+.env
+*.bat
+*.sh
+logs/
+*.md
+!README.md
+
+# Large content files (will be uploaded separately)
+Content/
+static/videos/
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.mkv
+
+# Git cache files
+.git/objects/
+.git/refs/
+.git/logs/
+
+# Temporary files
+*.tmp
+*.temp 

@@ -1,0 +1,290 @@
+{% extends 'booking/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Danov Music Studio - Berlin' %}{% endblock %}
+
+{% block body_class %}home-page{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <!-- Background Video -->
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none" poster="{% static 'images/studio-bg.jpg' %}">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            {% trans 'Your browser does not support the video tag.' %}
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col-lg-6 hero-content">
+                <h1 class="display-4 fw-bold mb-4">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% if LANGUAGE_CODE == 'ru' %}
+                        Создавайте <span class="text-gradient">профессиональный звук</span> для ваших проектов
+                    {% else %}
+                        {% trans 'Create professional sound for your projects' %}
+                    {% endif %}
+                </h1>
+                <p class="lead mb-4">
+                    {% blocktrans trimmed %}
+                    Professional music studio in Berlin for recording, mixing and mastering. 
+                    Modern equipment and experienced sound engineers help bring your musical ideas to life.
+                    {% endblocktrans %}
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="{% url 'booking:booking' %}" class="btn btn-primary">
+                        <i class="fas fa-calendar-plus me-2"></i>{% trans 'Book Studio Time' %}
+                    </a>
+                    <a href="{% url 'booking:services' %}" class="btn btn-outline-light">
+                        <i class="fas fa-list me-2"></i>{% trans 'Our Services' %}
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-image" style="margin-top: 0.5rem;">
+                    <img src="{% static 'images/Logo1.png' %}" alt="Danov Music Studio" class="img-fluid" loading="lazy" style="max-width: 600px; width: 100%; height: auto; filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 30px rgba(139, 92, 246, 0.4)) drop-shadow(0 0 60px rgba(139, 92, 246, 0.2));">
+                    <h3 class="text-white mt-1" style="font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(139, 92, 246, 0.3), 0 0 45px rgba(139, 92, 246, 0.2);">{% trans 'Music Production Studio' %}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">{% trans 'Why Choose Us' %}</h2>
+        <p class="section-subtitle">{% trans 'Professional approach to every project' %}</p>
+        
+        <div class="row g-3">
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h5 class="card-title">{% trans 'Professional Recording' %}</h5>
+                        <p class="card-text">{% trans 'We use only quality equipment to get clean and clear sound' %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <h5 class="card-title">{% trans 'Mixing & Mastering' %}</h5>
+                        <p class="card-text">{% trans 'Experienced sound engineers create balanced and commercial sound' %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5 class="card-title">{% trans 'Flexible Schedule' %}</h5>
+                        <p class="card-text">{% trans 'We work at your convenient time, including weekends and holidays' %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview Section -->
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <h2 class="section-title">{% trans 'Our Services' %}</h2>
+        <p class="section-subtitle">{% trans 'Complete range of services for your music projects' %}</p>
+        
+        <div class="row g-2">
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card">
+                    {% load static %}
+                    <div class="service-image">
+                        <img src="{% static 'images/recording.png' %}" alt="Recording" class="img-fluid">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h5>{% trans 'Recording' %}</h5>
+                    <div class="service-price">70€/hour</div>
+                    <p>🎤 Record with precision, sound like a PRO</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/Mixing.png' %}" alt="Mixing" class="img-fluid">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h5>{% trans 'Mixing' %}</h5>
+                    <div class="service-price">from 200€</div>
+                    <p>Professional mixing for commercial sound</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/Mastering.png' %}" alt="Mastering" class="img-fluid">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-compact-disc"></i>
+                    </div>
+                    <h5>{% trans 'Mastering' %}</h5>
+                    <div class="service-price">50€/hour</div>
+                    <p>🚀 Loud, clear, and ready for release</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/Music Production.png' %}" alt="Music Production" class="img-fluid">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h5>{% trans 'Music Production' %}</h5>
+                    <div class="service-price">from 400€</div>
+                    <p>🎶 From idea to hit – custom production</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="{% url 'booking:services' %}" class="btn btn-primary">
+                <i class="fas fa-list me-2"></i>{% trans 'All Services' %}
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview Section -->
+<section class="section about-preview-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title text-start">{% trans 'About Our Studio' %}</h2>
+                <p class="lead mb-2">
+                    {% trans 'Danov Music Studio is a modern music studio in Berlin, equipped with professional equipment for creating quality music.' %}
+                </p>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {% trans 'Professional equipment' %}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {% trans 'Experienced sound engineers' %}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {% trans 'Convenient location in Berlin' %}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {% trans 'Competitive prices' %}
+                    </li>
+                </ul>
+                <a href="{% url 'booking:about' %}" class="btn btn-outline-light">
+                    <i class="fas fa-info-circle me-2"></i>{% trans 'Learn More' %}
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-microphone-alt"></i>
+                        </div>
+                        <h5 class="card-title">{% trans 'Our Equipment' %}</h5>
+                        <p class="card-text">
+                            {% trans 'We use only professional equipment from leading manufacturers to get maximum sound quality.' %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Producer Section -->
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title text-start">{% trans 'Meet the Producer' %}</h2>
+                <h3 class="text-accent mb-2">{% trans 'Nikita Bogdanov (DANOV)' %}</h3>
+                
+                <p class="lead mb-3">{% trans 'Music producer and DJ with over 17 years of experience in electronic music production, mixing, and mastering. Formerly part of the duo Ost & Meyer.' %}</p>
+                
+                <a href="{% url 'booking:about' %}" class="btn btn-outline-light">
+                    <i class="fas fa-user-tie me-2"></i>{% trans 'Full Biography' %}
+                </a>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        {% load static %}
+                        <div class="team-photo">
+                            <img src="{% static 'images/Nikita1.png' %}" alt="Nikita Bogdanov" class="img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="team-photo">
+                            <img src="{% static 'images/Nikita2.png' %}" alt="Nikita Bogdanov Studio" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h5 class="card-title">{% trans '17+ Years Experience' %}</h5>
+                        <p class="card-text">
+                            {% trans 'Professional music production with international recognition' %}
+                        </p>
+                        <div class="d-flex justify-content-center gap-2 flex-wrap">
+                            <span class="badge bg-primary">{% trans 'Electronic Music' %}</span>
+                            <span class="badge bg-primary">{% trans 'Mixing' %}</span>
+                            <span class="badge bg-primary">{% trans 'Mastering' %}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Preview Section -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title">{% trans 'Ready to Start?' %}</h2>
+                <p class="section-subtitle">
+                    {% trans 'Contact us or book studio time right now' %}
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="{% url 'booking:booking' %}" class="btn btn-primary">
+                        <i class="fas fa-calendar-plus me-2"></i>{% trans 'Book Now' %}
+                    </a>
+                    <a href="{% url 'booking:contact' %}" class="btn btn-outline-light">
+                        <i class="fas fa-envelope me-2"></i>{% trans 'Contact' %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

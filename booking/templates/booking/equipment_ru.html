@@ -1,0 +1,166 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Оборудование студии - Danov Music Studio{% endblock %}
+{% block body_class %}equipment-page{% endblock %}
+
+{% block content %}
+<section class="hero" style="min-height: 45vh;">
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="display-4 fw-bold mb-4">Оборудование студии</h1>
+                <p class="lead fw-bold">Профессиональный парк для максимального качества звука</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row"><div class="col-lg-8 mx-auto text-center mb-3" style="margin-top:-1rem;">
+            <h2 class="section-title">STUDIO EQUIPMENT</h2>
+            <p class="section-subtitle">Современные технологии</p>
+        </div></div>
+        <div class="row g-4">
+            <div class="col-lg-6"><div class="service-card equipment-card">
+                <div class="service-image"><img src="{% static 'images/genelec8040bpm.png' %}" alt="GENELEC 8040BPM" class="img-fluid"><div class="hover-bg"></div></div>
+                <div class="service-icon"><i class="fas fa-volume-up"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">GENELEC 8040BPM</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Для мониторинга используем GENELEC 8040BPM и Yamaha NS10m. Потрясающая ясность и точность позволяют слышать каждый нюанс и собирать идеальный микс.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Профессиональные студийные мониторы</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Кристально чистое воспроизведение</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Идеально для сведения и мастеринга</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-6"><div class="service-card equipment-card">
+                <div class="service-image"><img src="{% static 'images/Yamaha NS-10M Studio.png' %}" alt="YAMAHA NS10M" class="img-fluid"><div class="hover-bg"></div></div>
+                <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">YAMAHA NS10M</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Легендарные Yamaha NS10m — стандарт индустрии с безупречной нейтральностью и точностью.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Мониторы‑стандарт индустрии</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Непревзойдённая нейтральность</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Идеально для критического мониторинга</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-6"><div class="service-card equipment-card">
+                <div class="service-image"><img src="{% static 'images/Neumann M149.png' %}" alt="NEUMANN M149" class="img-fluid"><div class="hover-bg"></div></div>
+                <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">NEUMANN M149</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Легендарный ламповый Neumann M149. В связке с 1073, 1176, LA‑2A обеспечивает 100% профессиональный результат.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Ламповый микрофон‑легенда</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Идеален для вокала и инструментов</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Тёплое и детальное звучание</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-6"><div class="service-card equipment-card">
+                <div class="service-image"><img src="{% static 'images/Neumann U87.png' %}" alt="NEUMANN U87" class="img-fluid"><div class="hover-bg"></div></div>
+                <div class="service-icon"><i class="fas fa-microphone"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">NEUMANN U87</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Не менее легендарный Neumann U87. В связке с аналоговым трактом — стабильный профессиональный результат.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Конденсаторный стандарт индустрии</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Универсален и надёжен</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Используется в тысячах хитов</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-12"><div class="service-card equipment-card">
+                <div class="service-image"><img src="{% static 'images/Nord Stage 3 88.png' %}" alt="NORD STAGE 3 88" class="img-fluid"><div class="hover-bg"></div></div>
+                <div class="service-icon"><i class="fas fa-keyboard"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">NORD STAGE 3 88</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Профессиональное сценическое пианино Nord Stage 3 — выбор ведущих музыкантов. Гибкость и реалистичность звучания погружают в творчество.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Профессиональное сценическое пианино</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Высокая гибкость звучания</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Подходит для любых жанров</li>
+                </ul>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary); padding: 2rem 0 3rem 0;">
+    <div class="container">
+        <div class="row"><div class="col-lg-8 mx-auto text-center mb-3">
+            <h2 class="section-title">Дополнительное оборудование</h2>
+            <p class="section-subtitle">Полный профессиональный сетап</p>
+        </div></div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6"><div class="service-card"><div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Аналоговый тракт</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">1073, 1176, LA‑2A — тот самый классический аналоговый саунд.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Neve 1073</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>1176</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>LA‑2A</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-4 col-md-6"><div class="service-card"><div class="service-icon"><i class="fas fa-hdd"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">RME Fireface UFX+</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Высококачественный AD/DA‑конвертер с ультра‑низкой задержкой.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Минимальная задержка</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Кристально чистый звук</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Профессиональный уровень</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-4 col-md-6"><div class="service-card"><div class="service-icon"><i class="fas fa-tools"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Sonarworks SoundID</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Система коррекции комнаты для точного мониторинга и идеальных миксов.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Коррекция АЧХ помещения</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Точный мониторинг</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Профессиональная калибровка</li>
+                </ul>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container"><div class="row"><div class="col-lg-8 mx-auto text-center mb-5">
+        <h2 class="section-title">Особенности студии</h2>
+        <p class="section-subtitle">Профессиональная среда для творчества</p>
+    </div></div>
+    <div class="row g-4">
+        <div class="col-lg-3 col-md-6"><div class="service-card"><div class="service-icon"><i class="fas fa-volume-up"></i></div>
+            <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Акустическая обработка</h5>
+            <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Профессиональная акустика для точного воспроизведения и мониторинга.</p>
+        </div></div>
+        <div class="col-lg-3 col-md-6"><div class="service-card"><div class="service-icon"><i class="fas fa-plug"></i></div>
+            <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Премиальные кабели</h5>
+            <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Минимальные потери и максимальное качество соединений.</p>
+        </div></div>
+        <div class="col-lg-3 col-md-6"><div class="service-card"><div class="service-icon"><i class="fas fa-laptop"></i></div>
+            <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Актуальный софт</h5>
+            <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Cubase Pro, современные плагины и топ‑VST инструменты.</p>
+        </div></div>
+        <div class="col-lg-3 col-md-6"><div class="service-card"><div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+            <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Профессиональный свет</h5>
+            <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Комфортное освещение для длительных сессий и атмосферы.</p>
+        </div></div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container"><div class="row"><div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-title">Готовы записываться?</h2>
+        <p class="section-subtitle">Оцените наше оборудование и создавайте сильную музыку</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="{% url 'booking:booking' %}" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать студию</a>
+            <a href="{% url 'booking:services' %}" class="btn btn-outline-light"><i class="fas fa-list me-2"></i>Наши услуги</a>
+        </div>
+    </div></div></div>
+</section>
+{% endblock %}
+

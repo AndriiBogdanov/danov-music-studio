@@ -1,0 +1,10 @@
+# Django Settings
+SECRET_KEY=your-secret-key-here
+DEBUG=False
+DJANGO_SETTINGS_MODULE=danovmusic_studio.settings_railway
+
+# Database (Railway will provide DATABASE_URL)
+DATABASE_URL=postgresql://user:password@host:port/database
+
+# Railway Settings
+RAILWAY_STATIC_URL=your-railway-static-url 

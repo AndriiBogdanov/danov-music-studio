@@ -1,0 +1,393 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Studio Booking - Danov Music Studio{% endblock %}
+
+{% block content %}
+<!-- Booking Section -->
+<section class="hero" style="min-height: 45vh;">
+    <!-- Background Video -->
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="display-4 fw-bold mb-4">
+                    Book Studio Time
+                </h1>
+                <p class="lead">
+                    Book your recording session in our Berlin studio
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Form Section -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- Selected Service Info -->
+                {% if selected_service_info %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h4 class="card-title">{{ selected_service_info.name }}</h4>
+                                <p class="card-text">{{ selected_service_info.description }}</p>
+                                <div class="service-price">{{ selected_service_info.price }}</div>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <a href="{% url 'booking:services' %}" class="btn btn-outline-light">
+                                    <i class="fas fa-arrow-left me-2"></i>Change Service
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- Available Times -->
+                {% if available_dates %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-calendar-check me-2"></i>Available Times</h5>
+                        <p class="card-text">Select your preferred date and time:</p>
+                        
+                        <div class="row">
+                            {% for date_info in available_dates %}
+                            <div class="col-md-6 mb-3">
+                                <div class="card booking-date-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">{{ date_info.date|date:"l, F j" }}</h6>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            {% for time_slot in date_info.times %}
+                                            {% if time_slot.status == 'available' %}
+                                            <button class="btn btn-outline-primary btn-sm time-slot" 
+                                                    data-date="{{ date_info.date|date:'Y-m-d' }}" 
+                                                    data-time="{{ time_slot.time }}"
+                                                    title="Available">
+                                                {{ time_slot.time }}
+                                            </button>
+                                            {% else %}
+                                            <button class="btn btn-outline-primary btn-sm time-slot-{{ time_slot.status }}" 
+                                                    disabled
+                                                    title="{{ time_slot.reason }}">
+                                                {{ time_slot.time }}
+                                            </button>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- Our Services Section -->
+                <section class="section" style="background: var(--dark-secondary); margin: 3rem 0;">
+                    <div class="container">
+                        <h2 class="section-title">Our Services</h2>
+                        <p class="section-subtitle">Choose the right service for your project</p>
+                        
+                        <div class="row g-4">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-microphone-alt"></i>
+                                    </div>
+                                    <h5>Recording</h5>
+                                    <div class="service-price">70€/hour</div>
+                                    <p>Record with precision, sound like a PRO</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-sliders-h"></i>
+                                    </div>
+                                    <h5>Mixing</h5>
+                                    <div class="service-price">from 200€</div>
+                                    <p>Professional mixing for commercial sound</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-compact-disc"></i>
+                                    </div>
+                                    <h5>Mastering</h5>
+                                    <div class="service-price">50€/hour</div>
+                                    <p>Loud, clear, and ready for release</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-music"></i>
+                                    </div>
+                                    <h5>Music Production</h5>
+                                    <div class="service-price">from 400€</div>
+                                    <p>From idea to hit – custom production</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Booking Form -->
+                <div class="booking-form">
+                    <h3><i class="fas fa-calendar-plus me-2"></i>Booking Form</h3>
+                    
+                    <form id="bookingForm" method="post">
+                        {% csrf_token %}
+                        
+                        <div id="alertContainer"></div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.name.id_for_label }}" class="form-label">
+                                    <i class="fas fa-user me-2"></i>Your Name *
+                                </label>
+                                {{ form.name }}
+                                {% if form.name.errors %}
+                                    <div class="text-danger small">{{ form.name.errors.0 }}</div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.email.id_for_label }}" class="form-label">
+                                    <i class="fas fa-envelope me-2"></i>Email *
+                                </label>
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                    <div class="text-danger small">{{ form.email.errors.0 }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.phone.id_for_label }}" class="form-label">
+                                    <i class="fas fa-phone me-2"></i>Phone *
+                                </label>
+                                {{ form.phone }}
+                                {% if form.phone.errors %}
+                                    <div class="text-danger small">{{ form.phone.errors.0 }}</div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.date.id_for_label }}" class="form-label">
+                                    <i class="fas fa-calendar me-2"></i>Date *
+                                </label>
+                                {{ form.date }}
+                                {% if form.date.errors %}
+                                    <div class="text-danger small">{{ form.date.errors.0 }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.time.id_for_label }}" class="form-label">
+                                    <i class="fas fa-clock me-2"></i>Time *
+                                </label>
+                                {{ form.time }}
+                                {% if form.time.errors %}
+                                    <div class="text-danger small">{{ form.time.errors.0 }}</div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.duration.id_for_label }}" class="form-label">
+                                    <i class="fas fa-hourglass-half me-2"></i>Duration *
+                                </label>
+                                {{ form.duration }}
+                                {% if form.duration.errors %}
+                                    <div class="text-danger small">{{ form.duration.errors.0 }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.message.id_for_label }}" class="form-label">
+                                <i class="fas fa-comment me-2"></i>Additional Information
+                            </label>
+                            {{ form.message }}
+                            {% if form.message.errors %}
+                                <div class="text-danger small">{{ form.message.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- reCAPTCHA -->
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-shield-alt me-2"></i>Security Check *
+                            </label>
+                            {{ form.captcha }}
+                            {% if form.captcha.errors %}
+                                <div class="text-danger small">{{ form.captcha.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="loading" id="loading">
+                            <div class="spinner"></div>
+                            <p>Sending booking request...</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                                <i class="fas fa-paper-plane me-2"></i>Send Booking Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Booking Info -->
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="card text-center h-100">
+                            <div class="card-body">
+                                <div class="service-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h5 class="card-title">Opening Hours</h5>
+                                <p class="card-text">Mon-Fri: 9:00-21:30<br>Sat: Closed<br>Sun: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card text-center h-100">
+                            <div class="card-body">
+                                <div class="service-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h5 class="card-title">Contact Us</h5>
+                                <p class="card-text">+49 175 413 75 18</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card text-center h-100">
+                            <div class="card-body">
+                                <div class="service-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h5 class="card-title">Studio Location</h5>
+                                <p class="card-text">Berlin, Germany</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle time slot selection
+    const timeSlots = document.querySelectorAll('.time-slot');
+    const dateInput = document.getElementById('id_date');
+    const timeInput = document.getElementById('id_time');
+    
+    timeSlots.forEach(slot => {
+        slot.addEventListener('click', function() {
+            // Remove active class from all slots
+            timeSlots.forEach(s => s.classList.remove('btn-primary'));
+            timeSlots.forEach(s => s.classList.add('btn-outline-primary'));
+            
+            // Add active class to clicked slot
+            this.classList.remove('btn-outline-primary');
+            this.classList.add('btn-primary');
+            
+            // Set form values
+            dateInput.value = this.dataset.date;
+            timeInput.value = this.dataset.time;
+        });
+    });
+    
+    // Handle form submission
+    const form = document.getElementById('bookingForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const loading = document.getElementById('loading');
+    const alertContainer = document.getElementById('alertContainer');
+    
+    let isSubmitting = false;
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Prevent multiple submissions
+        if (isSubmitting) {
+            return false;
+        }
+        
+        isSubmitting = true;
+        
+        // Show loading
+        submitBtn.style.display = 'none';
+        loading.style.display = 'block';
+        
+        // Submit form via AJAX
+        fetch('', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alertContainer.innerHTML = `
+                    <div class="alert alert-success">
+                        ${data.message}
+                    </div>
+                `;
+                form.reset();
+            } else {
+                alertContainer.innerHTML = `
+                    <div class="alert alert-danger">
+                        ${data.message}
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            alertContainer.innerHTML = `
+                <div class="alert alert-danger">
+                    Error sending booking request. Please try again.
+                </div>
+            `;
+        })
+        .finally(() => {
+            // Hide loading
+            submitBtn.style.display = 'block';
+            loading.style.display = 'none';
+            isSubmitting = false;
+        });
+    });
+});
+</script>
+{% endblock %} 

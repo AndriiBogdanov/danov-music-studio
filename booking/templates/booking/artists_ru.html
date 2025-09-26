@@ -1,0 +1,153 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Артисты - Danov Music Studio{% endblock %}
+
+{% block content %}
+<section class="hero" style="min-height: 40vh;">
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="display-4 fw-bold mb-4">АРТИСТЫ</h1>
+                <p class="lead">Артисты, работавшие с Danov Music Studio</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row g-4 artists-grid">
+            <!-- Row 1 -->
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Yarmak.png' %}" alt="YARMAK" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">YARMAK</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Sonya Kay.png' %}" alt="SONYA KAY" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">SONYA KAY</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/questpistols.png' %}" alt="QUEST PISTOLS" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">QUEST PISTOLS</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/max barskih.png' %}" alt="MAX BARSKIH" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">MAX BARSKIH</div>
+                </div>
+            </div>
+            
+            <!-- Row 2 -->
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/bumbox.png' %}" alt="БУМБОКС" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">БУМБОКС</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Raja.png' %}" alt="RAJA" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">RAJA</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/iryna fedishin.png' %}" alt="IRYNA FEDISHIN" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">IRYNA FEDISHIN</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/green gray.png' %}" alt="GREEN GREY" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">GREEN GREY</div>
+                </div>
+            </div>
+            
+            <!-- Row 3 -->
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Yuliya Roznen.png' %}" alt="YULIYA ROZNEN" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">YULIYA ROZNEN</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Ivan-Navi.png' %}" alt="IVAN NAVI" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">IVAN NAVI</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Tarabanova.png' %}" alt="TARABANOVA" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">TARABANOVA</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Amador Lopez & Rumberos.png' %}" alt="AMADOR LOPEZ" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">AMADOR LOPEZ</div>
+                </div>
+            </div>
+            
+            <!-- Row 4 -->
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Big Boss.png' %}" alt="BIG BOSS" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">BIG BOSS</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Entony_Official.png' %}" alt="ENTONY OFFICIAL" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">ENTONY OFFICIAL</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/KiyvStoner.png' %}" alt="KIYV STONER" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">KIYV STONER</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Myata.png' %}" alt="MYATA" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">MYATA</div>
+                </div>
+            </div>
+            
+            <!-- Row 5 -->
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Oceana.png' %}" alt="OCEANA" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">OCEANA</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Omut.png' %}" alt="OMUT" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">OMUT</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3">
+                <div class="artist-card">
+                    <img src="{% static 'images/artists/Rulada.png' %}" alt="RULADA" class="img-fluid rounded artist-photo">
+                    <div class="artist-name">RULADA</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

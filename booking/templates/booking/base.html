@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:'en' }}">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Danov Music Studio{% endblock %}</title>
+    {% if seo and seo.description %}
+    <meta name="description" content="{{ seo.description }}">
+    {% else %}
+    <meta name="description" content="Professional recording, mixing, mastering and music production in Berlin. Ukrainian-led studio. Danov Music Studio.">
+    {% endif %}
+    {% if seo and seo.keywords %}
+    <meta name="keywords" content="{{ seo.keywords }}">
+    {% else %}
+    <meta name="keywords" content="recording studio berlin, студия звукозаписи берлин, студія звукозапису берлін, mixing, mastering, music production, ukrainian studio berlin">
+    {% endif %}
+    {# Canonical без query string #}
+    <link rel="canonical" href="{{ request.build_absolute_uri|cut:'?' }}">
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% if seo and seo.og_title %}{{ seo.og_title }}{% else %}Danov Music Studio – Berlin Recording, Mixing, Mastering{% endif %}">
+    <meta property="og:description" content="{% if seo and seo.og_description %}{{ seo.og_description }}{% else %}Recording, mixing, mastering, production in Berlin. First Ukrainian studio in Berlin.{% endif %}">
+    <meta property="og:image" content="{% if seo and seo.og_image %}{{ seo.og_image }}{% else %}{% static 'images/Logo1.png' %}{% endif %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if seo and seo.og_title %}{{ seo.og_title }}{% else %}Danov Music Studio – Berlin{% endif %}">
+    <meta name="twitter:description" content="{% if seo and seo.og_description %}{{ seo.og_description }}{% else %}Recording, mixing, mastering, production in Berlin.{% endif %}">
+    <meta name="twitter:image" content="{% if seo and seo.og_image %}{{ seo.og_image }}{% else %}{% static 'images/Logo1.png' %}{% endif %}">
+    
+    <!-- Hreflang -->
+    {% if hreflang_links %}
+        {% for link in hreflang_links %}
+        <link rel="alternate" href="{{ link.url }}" hreflang="{{ link.lang }}" />
+        {% endfor %}
+        <link rel="alternate" href="{{ hreflang_x_default }}" hreflang="x-default" />
+    {% endif %}
+    
+    {% load i18n %}
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/Favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/Favicon.png' %}">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{% static 'css/style.css' %}" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    
+    <!-- Prefetch main pages for faster navigation -->
+    <link rel="prefetch" href="{% url 'booking:home' %}">
+    <link rel="prefetch" href="{% url 'booking:services' %}">
+    <link rel="prefetch" href="{% url 'booking:booking' %}">
+    <link rel="prefetch" href="{% url 'booking:about' %}">
+    <link rel="prefetch" href="{% url 'booking:portfolio' %}">
+    <link rel="prefetch" href="{% url 'booking:artists' %}">
+    <link rel="prefetch" href="{% url 'booking:contact' %}">
+    
+    {% comment %} Analytics (GA4) via admin-controlled settings {% endcomment %}
+    {% if seo and seo.ga4 and seo.ga4.id %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ seo.ga4.id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '{{ seo.ga4.id }}');
+    </script>
+    {% endif %}
+
+    {% comment %} Site verifications from admin {% endcomment %}
+    {% if site_seo_settings and site_seo_settings.google_site_verification %}
+    <meta name="google-site-verification" content="{{ site_seo_settings.google_site_verification }}" />
+    {% endif %}
+    {% if site_seo_settings and site_seo_settings.bing_site_verification %}
+    <meta name="msvalidate.01" content="{{ site_seo_settings.bing_site_verification }}" />
+    {% endif %}
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" onerror="console.log('Google Fonts failed to load')">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" onerror="console.log('Font Awesome failed to load')">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS - Load after Bootstrap to override -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- LocalBusiness JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Danov Music Studio",
+      "image": "{{ request.build_absolute_uri }}static/images/Logo1.png",
+      "url": "{{ request.build_absolute_uri }}",
+      "telephone": "+49 175 413 75 18",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bonifaziusstraße 16-18",
+        "addressLocality": "Berlin",
+        "postalCode": "13509",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.589,
+        "longitude": 13.332
+      },
+      "areaServed": ["Berlin", "Germany"],
+      "priceRange": "€€",
+      "sameAs": [
+        "https://instagram.com/placeholder",
+        "https://www.youtube.com/placeholder",
+        "https://t.me/placeholder",
+        "https://www.tiktok.com/@placeholder"
+      ]
+    }
+    </script>
+    
+    {% block extra_css %}
+    <style>
+    /* Hide password dots for phone field */
+    #contact_number_field {
+        -webkit-text-security: none !important;
+    }
+    </style>
+    {% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="{% static 'images/Favicon.png' %}" alt="Favicon" width="44" height="44" class="me-2" loading="lazy">
+                    <img src="{% static 'images/Logo1.png' %}" alt="Danov Music Studio Logo" height="56" style="margin-left: 8px;" loading="lazy">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'booking:home' %}">{% if LANGUAGE_CODE == 'ru' %}Главная{% else %}{% trans 'Home' %}{% endif %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'booking:about' %}">{% if LANGUAGE_CODE == 'ru' %}О студии{% else %}{% trans 'About' %}{% endif %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}" href="{% url 'booking:services' %}">{% if LANGUAGE_CODE == 'ru' %}Услуги{% else %}{% trans 'Services' %}{% endif %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'equipment' %}active{% endif %}" href="{% url 'booking:equipment' %}">{% if LANGUAGE_CODE == 'ru' %}Оборудование{% else %}{% trans 'Equipment' %}{% endif %}</a>
+                        </li>
+                        <!-- Gallery temporarily removed -->
+                        <!-- <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}" href="{% url 'booking:gallery' %}">{% trans 'Gallery' %}</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}" href="{% url 'booking:portfolio' %}">{% if LANGUAGE_CODE == 'ru' %}Портфолио{% else %}{% trans 'Portfolio' %}{% endif %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'artists' %}active{% endif %}" href="{% url 'booking:artists' %}">{% if LANGUAGE_CODE == 'ru' %}Артисты{% else %}{% trans 'Artists' %}{% endif %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'booking:contact' %}">{% if LANGUAGE_CODE == 'ru' %}Контакты{% else %}{% trans 'Contact' %}{% endif %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'booking' %}active{% endif %}" href="{% url 'booking:booking' %}">{% if LANGUAGE_CODE == 'ru' %}Бронирование{% else %}{% trans 'Booking' %}{% endif %}</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Language Switcher -->
+                    <div class="header-language-switcher">
+                        <button class="header-language-btn" id="languageBtn" onclick="toggleLanguageDropdown()">
+                            <i class="fas fa-globe"></i>
+                            <span id="currentLanguage">
+                                {% if LANGUAGE_CODE == 'en' %}English
+                                {% elif LANGUAGE_CODE == 'ru' %}Русский
+                                {% elif LANGUAGE_CODE == 'uk' %}Українська
+                                {% elif LANGUAGE_CODE == 'de' %}Deutsch
+                                {% else %}English{% endif %}
+                            </span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="header-language-dropdown" id="languageDropdown">
+                            <button class="header-language-option {% if LANGUAGE_CODE == 'en' %}active{% endif %}" onclick="changeLanguage('en')">English</button>
+                            <button class="header-language-option {% if LANGUAGE_CODE == 'ru' %}active{% endif %}" onclick="changeLanguage('ru')">Русский</button>
+                            <button class="header-language-option {% if LANGUAGE_CODE == 'uk' %}active{% endif %}" onclick="changeLanguage('uk')">Українська</button>
+                            <button class="header-language-option {% if LANGUAGE_CODE == 'de' %}active{% endif %}" onclick="changeLanguage('de')">Deutsch</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Messages -->
+    {% if messages %}
+        <div class="container mt-5 pt-5">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    {% get_current_language as LANGUAGE_CODE %}
+    {% if LANGUAGE_CODE == 'ru' %}
+        {% include 'booking/partials/footer_ru.html' %}
+    {% elif LANGUAGE_CODE == 'uk' %}
+        {% include 'booking/partials/footer_uk.html' %}
+    {% elif LANGUAGE_CODE == 'de' %}
+        {% include 'booking/partials/footer_de.html' %}
+    {% else %}
+        {% include 'booking/partials/footer_en.html' %}
+    {% endif %}
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" onerror="console.log('Bootstrap failed to load')"></script>
+    
+    {% load static %}
+    <script src="{% static 'js/main.js' %}" onerror="console.log('Main.js failed to load')"></script>
+    
+    <!-- Language Switcher JavaScript -->
+    <script>
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            const btn = document.getElementById('languageBtn');
+            
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+                btn.classList.remove('active');
+            } else {
+                dropdown.classList.add('show');
+                btn.classList.add('active');
+            }
+        }
+        
+        function changeLanguage(lang) {
+            // Простое переключение через прямые ссылки
+            const currentPath = window.location.pathname;
+            let newPath;
+            
+            if (currentPath.startsWith('/en/')) {
+                newPath = '/' + lang + '/' + currentPath.substring(4);
+            } else if (currentPath.startsWith('/ru/')) {
+                newPath = '/' + lang + '/' + currentPath.substring(4);
+            } else if (currentPath.startsWith('/de/')) {
+                newPath = '/' + lang + '/' + currentPath.substring(4);
+            } else if (currentPath.startsWith('/uk/')) {
+                newPath = '/' + lang + '/' + currentPath.substring(4);
+            } else {
+                newPath = '/' + lang + '/';
+            }
+            
+            window.location.href = newPath;
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const switcher = document.querySelector('.header-language-switcher');
+            const dropdown = document.getElementById('languageDropdown');
+            const btn = document.getElementById('languageBtn');
+            
+            if (!switcher.contains(event.target)) {
+                dropdown.classList.remove('show');
+                btn.classList.remove('active');
+            }
+        });
+        
+        // Close dropdown on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const dropdown = document.getElementById('languageDropdown');
+                const btn = document.getElementById('languageBtn');
+                dropdown.classList.remove('show');
+                btn.classList.remove('active');
+            }
+        });
+    </script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html> 

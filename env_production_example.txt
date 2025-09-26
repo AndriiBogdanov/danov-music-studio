@@ -1,0 +1,30 @@
+# Production Environment Variables for Danov Music Studio VPS Deployment
+# Copy this file to .env on your VPS server and fill in your real values
+
+# Django Settings
+SECRET_KEY=your-very-long-secret-key-here-generate-new-one
+DEBUG=False
+ALLOWED_HOSTS=217.154.120.187,localhost,127.0.0.1
+
+# Database Configuration (PostgreSQL)
+DB_NAME=danovmusic_db
+DB_USER=danovmusic_user
+DB_PASSWORD=your-strong-database-password
+DB_HOST=localhost
+DB_PORT=5432
+
+# Email Configuration
+EMAIL_HOST_USER=danovwebsite@gmail.com
+EMAIL_HOST_PASSWORD=your-16-character-app-password-here
+BOOKING_NOTIFICATION_EMAIL=danovmusic@gmail.com
+
+# reCAPTCHA Keys (get from https://www.google.com/recaptcha/)
+RECAPTCHA_PUBLIC_KEY=your-recaptcha-public-key
+RECAPTCHA_PRIVATE_KEY=your-recaptcha-private-key
+
+# Admin Configuration
+ADMIN_NAME=Admin
+ADMIN_EMAIL=danovmusic@gmail.com
+
+# Security Settings
+DJANGO_SETTINGS_MODULE=danovmusic_studio.settings_vps

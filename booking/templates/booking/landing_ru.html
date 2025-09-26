@@ -1,0 +1,54 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}{{ seo.og_title|default:'Danov Music Studio – Berlin' }}{% endblock %}
+
+{% block content %}
+<section class="hero" style="min-height: 45vh;">
+	<div class="hero-video-background">
+		{% load static %}
+		<video autoplay muted loop playsinline preload="none">
+			<source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+		</video>
+		<div class="video-overlay"></div>
+	</div>
+	<div class="container">
+		<div class="row align-items-center">
+            <div class="col-lg-9 hero-content">
+                <h1 class="display-5 fw-bold mb-3">{{ service_name }}</h1>
+                <p class="lead">{{ service_desc }}</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section">
+	<div class="container">
+		<div class="row g-4">
+            <div class="col-lg-8">
+                <div class="service-card p-4">
+                    <div class="service-icon"><i class="fas fa-star"></i></div>
+                    <h2 class="section-title mb-3">Почему Danov Music Studio?</h2>
+                    <ul class="mb-3">
+                        {% for b in service_benefits %}
+                        <li><i class="fas fa-check text-success me-2"></i>{{ b }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="service-price mb-3">{{ service_price }}</div>
+                    <a href="{% url 'booking:booking' %}?service={{ service_key }}" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать</a>
+                </div>
+			</div>
+			<div class="col-lg-4">
+				<div class="card p-3">
+					<h5 class="mb-3">Быстрая бронь</h5>
+					<p>Выберите дату и время. Без звонков.</p>
+					<a href="{% url 'booking:booking' %}" class="btn btn-outline-primary btn-sm">Открыть бронь</a>
+				</div>
+				<div class="card p-3 mt-3">
+					<h5 class="mb-3">Контакты</h5>
+					<p>+49 175 413 75 18<br/>danovmusic@gmail.com</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

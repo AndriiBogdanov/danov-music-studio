@@ -1,0 +1,66 @@
+{% extends 'booking/base.html' %}
+{% block title %}FAQ - Danov Music Studio{% endblock %}
+{% block content %}
+<section class="hero" style="min-height: 35vh;">
+	<div class="hero-video-background">
+		{% load static %}
+		<video autoplay muted loop playsinline preload="none">
+			<source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+		</video>
+		<div class="video-overlay"></div>
+	</div>
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-9 hero-content">
+				<h1 class="display-5 fw-bold mb-3">FAQ</h1>
+				<p class="lead">Antworten zu Buchung, Leistungen und Zahlung</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section">
+	<div class="container">
+		<div class="row g-4">
+			<div class="col-lg-8">
+				<div class="service-card p-4">
+					<div class="service-icon"><i class="fas fa-circle-question"></i></div>
+					<h2 class="section-title mb-3">Allgemein</h2>
+					<div class="accordion" id="faqGeneralDe">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="dg1h"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dg1">Wie buche ich eine Session?</button></h2>
+							<div id="dg1" class="accordion-collapse collapse show" data-bs-parent="#faqGeneralDe"><div class="accordion-body">Gehe zur Buchung, wähle Datum, Uhrzeit und Dauer und sende die Anfrage.</div></div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="dg2h"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dg2">Kann ich stornieren oder verschieben?</button></h2>
+							<div id="dg2" class="accordion-collapse collapse" data-bs-parent="#faqGeneralDe"><div class="accordion-body">Ja, bitte kontaktiere uns frühzeitig für Storno oder Umbuchung.</div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="card p-3">
+					<h5 class="mb-3">Brauchen Sie Hilfe?</h5>
+					<p>Schreiben Sie uns oder buchen Sie eine 10‑min Beratung.</p>
+					<a href="{% url 'booking:contact' %}" class="btn btn-outline-primary btn-sm">Kontakt</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% block extra_js %}
+{{ block.super }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "Wie buche ich eine Session?","acceptedAnswer": {"@type": "Answer","text": "Gehe zur Buchung, wähle Datum, Uhrzeit und Dauer und sende die Anfrage."}},
+    {"@type": "Question","name": "Kann ich stornieren oder verschieben?","acceptedAnswer": {"@type": "Answer","text": "Ja, bitte kontaktiere uns frühzeitig für Storno oder Umbuchung."}}
+  ]
+}
+</script>
+{% endblock %}
+{% endblock %}
+

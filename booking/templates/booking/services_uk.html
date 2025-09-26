@@ -1,0 +1,286 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Послуги - Danov Music Studio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero" style="min-height: 45vh;">
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="display-4 fw-bold mb-4">Наші послуги</h1>
+                <p class="lead fw-bold">Професійні послуги звукозапису в Берліні</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Студійні послуги</h2>
+        <p class="section-subtitle">Професійні послуги для ваших музичних проєктів · <a href="{% url 'booking:faq' %}" class="link-light">Більше відповідей — у FAQ</a></p>
+        <div class="row g-4">
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                {% load static %}
+                <div class="service-image"><img src="{% static 'images/recording.png' %}" alt="Запис" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Запис</h5>
+                <div class="service-price mb-3">70€/година</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🎤 Точний запис — звучите як ПРО. Професійний запис на якісному обладнанні.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Професійні мікрофони</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Акустична обробка</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Базова обробка</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Компресія та еквалайзер</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=recording" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронювати</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mixing.png' %}" alt="Зведення" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Зведення</h5>
+                <div class="service-price mb-3">від 200€</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Після — +10€ за доріжку/інструмент. Дублюючі доріжки — 5€/трек.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Баланс рівнів</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Панорамування</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>EQ та компресія</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Ефекти та реверберація</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=mixing" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронювати</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mastering.png' %}" alt="Мастеринг" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-compact-disc"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Мастеринг</h5>
+                <div class="service-price mb-3">50€/година</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🚀 Гучно, чисто та готово до релізу — професійний мастеринг.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Фінальна еквалізація</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Мультибенд‑компресія</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Лімітування</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Підготовка до релізу</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=mastering" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронювати</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Music Production.png' %}" alt="Продакшн" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-music"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Музичний продакшн</h5>
+                <div class="service-price mb-3">від 400€</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🎶 Від ідеї до хіта — індивідуальний продакшн.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Аранжування під замовлення</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Акордові послідовності</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Інструментування</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Повний продакшн</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=production" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронювати</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/vocal cleanup.png' %}" alt="Vocal Cleanup" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-magic"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Vocal Cleanup</h5>
+                <div class="service-price mb-3">від 100€ до 200€</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Warping та тюнінг — професійна чистка та обробка вокалу.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Шумоподавлення</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Налаштування інтонації</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Контроль дихання</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Фінальний поліш</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=vocal_cleanup" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронювати</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/vocal tuning.png' %}" alt="Vocal Tuning" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-wave-square"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Vocal Tuning</h5>
+                <div class="service-price mb-3">100€/година</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🎶 Ідеальна точність та природність — професійний тюнінг вокалу.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Корекція висоти</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Природна настройка</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Melodyne/Auto‑Tune</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Професійний результат</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=vocal_tuning" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронювати</a></div>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section faq-section">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-question-circle me-3" style="color: var(--accent-color);"></i>
+            FAQ
+        </h2>
+        <p class="section-subtitle">Часто задавані питання про наші послуги</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="service-card">
+                    <div class="accordion" id="faqServicesUk">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="ukq1h">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ukq1">
+                                    Скільки коштує зведення?
+                                </button>
+                            </h2>
+                            <div id="ukq1" class="accordion-collapse collapse show" data-bs-parent="#faqServicesUk">
+                                <div class="accordion-body">
+                                    Зведення від 200€ та залежить від кількості доріжок і складності.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="ukq2h">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ukq2">
+                                    Що входить у мастеринг?
+                                </button>
+                            </h2>
+                            <div id="ukq2" class="accordion-collapse collapse" data-bs-parent="#faqServicesUk">
+                                <div class="accordion-body">
+                                    Фінальний EQ, мультибенд‑компресія, лімітування та підготовка до релізу.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="ukq3h">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ukq3">
+                                    Чи можна забронювати кілька годин?
+                                </button>
+                            </h2>
+                            <div id="ukq3" class="accordion-collapse collapse" data-bs-parent="#faqServicesUk">
+                                <div class="accordion-body">
+                                    Так. Оберіть тривалість у формі бронювання або напишіть нам.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <a href="{% url 'booking:faq' %}" class="btn btn-outline-light">
+                            <i class="fas fa-arrow-right me-2"></i>
+                            Більше відповідей — у FAQ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary); padding: 3rem 0;">
+    <div class="container">
+        <h2 class="section-title mb-3">Оренда студії</h2>
+        <p class="section-subtitle mb-5">Оберіть оптимальний варіант під задачу</p>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-5 col-md-6"><div class="service-card rental-card text-center h-100">
+                <div class="service-icon mb-3"><i class="fas fa-clock"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Погодинна оплата</h5>
+                <div class="service-price mb-3">70€/година</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">⏱️ Професійний запис та базова обробка за годину.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Професійний запис</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Базова обробка</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Обладнання включено</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Допомога інженера</li>
+                </ul>
+                <div class="text-center mt-auto"><a href="{% url 'booking:booking' %}?service=hourly" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронювати</a></div>
+            </div></div>
+            <div class="col-lg-5 col-md-6"><div class="service-card rental-card text-center h-100">
+                <div class="service-icon mb-3"><i class="fas fa-building"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Денна оренда</h5>
+                <div class="service-price mb-3">450€/день</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🏢 Ваша студія — ваше час. Повний доступ на день.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>12 годин студії</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Повний доступ до обладнання</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Професійний інженер</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Повний продакшн</li>
+                </ul>
+                <div class="text-center mt-auto"><a href="{% url 'booking:booking' %}?service=daily" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронювати</a></div>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding: 3rem 0;">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6"><div class="card text-center h-100"><div class="card-body">
+                <div class="info-icon mb-3"><i class="fas fa-clock"></i></div>
+                <h3 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Графік роботи</h3>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">⏰ Гнучкий графік під ваші завдання</p>
+                <div class="schedule-list">
+                    <div class="schedule-item"><span class="schedule-day">Понеділок — П'ятниця</span><span class="schedule-time">9:00 - 21:30</span></div>
+                    <div class="schedule-item"><span class="schedule-day">Субота</span><span class="schedule-time closed">Вихідний</span></div>
+                    <div class="schedule-item"><span class="schedule-day">Неділя</span><span class="schedule-time closed">Вихідний</span></div>
+                </div>
+            </div></div></div>
+            <div class="col-lg-4 col-md-6"><div class="card text-center h-100"><div class="card-body">
+                <div class="info-icon mb-3"><i class="fas fa-address-book"></i></div>
+                <h3 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Зв'яжіться з нами</h3>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">📞 Бронювання та питання</p>
+                <div class="contact-list">
+                    <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span class="contact-text">Bonifaziusstraße 16-18, 13509 Berlin, Germany</span></div>
+                    <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span class="contact-text">danovmusic@gmail.com</span></div>
+                    <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span class="contact-text">+49 175 413 75 18</span></div>
+                </div>
+            </div></div></div>
+            <div class="col-lg-4 col-md-6"><div class="card text-center h-100"><div class="card-body">
+                <div class="info-icon mb-3"><i class="fas fa-map-marker-alt"></i></div>
+                <h3 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Розташування студії</h3>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">📍 Ми в Берліні</p>
+                <div class="contact-list"><div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span class="contact-text">Bonifaziusstraße 16-18, 13509 Berlin, Germany</span></div></div>
+            </div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary); padding: 2.5rem 0;">
+    <div class="container"><div class="row"><div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-title mb-3">Готові почати?</h2>
+        <p class="section-subtitle mb-4">Забронюйте час у студії та створюйте професійну музику</p>
+        <a href="{% url 'booking:booking' %}" class="btn btn-primary btn-lg"><i class="fas fa-calendar-plus me-2"></i>Забронювати студію</a>
+    </div></div></div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "Скільки коштує зведення?","acceptedAnswer": {"@type": "Answer","text": "Зведення від 200€ та залежить від кількості доріжок і складності."}},
+    {"@type": "Question","name": "Що входить у мастеринг?","acceptedAnswer": {"@type": "Answer","text": "Фінальний EQ, мультибенд‑компресія, лімітування та підготовка до релізу."}},
+    {"@type": "Question","name": "Чи можна забронювати кілька годин?","acceptedAnswer": {"@type": "Answer","text": "Так. Оберіть тривалість у формі бронювання або напишіть нам."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "Service","name": "Запис","areaServed": "Berlin","serviceType": "Recording","description": "Професійний запис на преміум обладнанні","offers": {"@type": "Offer","priceCurrency": "EUR","price": "70","unitCode": "HUR"}},
+    {"@type": "Service","name": "Зведення","areaServed": "Berlin","serviceType": "Mixing","description": "Комерційний мікс з балансом, EQ, компресією та ефектами","offers": {"@type": "Offer","priceCurrency": "EUR","price": "200","priceSpecification": {"@type": "PriceSpecification","price": "200","priceCurrency": "EUR","name": "from"}}},
+    {"@type": "Service","name": "Мастеринг","areaServed": "Berlin","serviceType": "Mastering","description": "Гучно, чисто та готово до релізу","offers": {"@type": "Offer","priceCurrency": "EUR","price": "50","unitCode": "HUR"}},
+    {"@type": "Service","name": "Музичний продакшн","areaServed": "Berlin","serviceType": "Music Production","description": "Від ідеї до готового треку — кастомний продакшн","offers": {"@type": "Offer","priceCurrency": "EUR","price": "400","priceSpecification": {"@type": "PriceSpecification","price": "400","priceCurrency": "EUR","name": "from"}}}
+  ]
+}
+</script>
+{% endblock %}

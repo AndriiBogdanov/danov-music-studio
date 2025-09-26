@@ -1,0 +1,177 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Studio Equipment - Danov Music Studio{% endblock %}
+{% block body_class %}equipment-page{% endblock %}
+
+{% block content %}
+<section class="hero" style="min-height: 45vh;">
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="display-4 fw-bold mb-4">Studio Equipment</h1>
+                <p class="lead fw-bold">Professional gear for the highest quality sound</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row"><div class="col-lg-8 mx-auto text-center mb-3" style="margin-top:-1rem;">
+            <h2 class="section-title">STUDIO EQUIPMENT</h2>
+            <p class="section-subtitle">The Latest & Greatest Technology</p>
+        </div></div>
+        <div class="row g-4">
+            <div class="col-lg-6"><div class="service-card equipment-card">
+                <div class="service-image"><img src="{% static 'images/genelec8040bpm.png' %}" alt="GENELEC 8040BPM" class="img-fluid"><div class="hover-bg"></div></div>
+                <div class="service-icon"><i class="fas fa-volume-up"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">GENELEC 8040BPM</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">For monitor playback, we use the GENELEC 8040BPM and Yamaha NS10m. The amazing clarity and precision allows you to hear every nuance of sound, creating the perfect mix.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Professional studio monitors</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Crystal clear sound reproduction</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Perfect for mixing and mastering</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-6"><div class="service-card equipment-card">
+                <div class="service-image"><img src="{% static 'images/Yamaha NS-10M Studio.png' %}" alt="YAMAHA NS10M" class="img-fluid"><div class="hover-bg"></div></div>
+                <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">YAMAHA NS10M</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Yamaha NS10m are true legends that have earned the trust of musicians and producers with their unrivaled neutrality and accuracy.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Industry standard monitors</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Unrivaled neutrality</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Perfect for critical listening</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-6"><div class="service-card equipment-card">
+                <div class="service-image"><img src="{% static 'images/Neumann M149.png' %}" alt="NEUMANN M149" class="img-fluid"><div class="hover-bg"></div></div>
+                <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">NEUMANN M149</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">The legendary Neumann M149 microphone. Combined with high-quality analog equipment such as 1073, 1176, and LA-2A, you can rely on 100% quality results.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Legendary tube microphone</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Perfect for vocals and instruments</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Warm and detailed sound</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-6"><div class="service-card equipment-card">
+                <div class="service-image"><img src="{% static 'images/Neumann U87.png' %}" alt="NEUMANN U87" class="img-fluid"><div class="hover-bg"></div></div>
+                <div class="service-icon"><i class="fas fa-microphone"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">NEUMANN U87</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">The equally legendary Neumann U87 microphone. Combined with high-quality analog equipment, you can count on 100% quality results.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Industry standard condenser</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Versatile and reliable</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Used in countless hit records</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-12"><div class="service-card equipment-card">
+                <div class="service-image"><img src="{% static 'images/Nord Stage 3 88.png' %}" alt="NORD STAGE 3 88" class="img-fluid"><div class="hover-bg"></div></div>
+                <div class="service-icon"><i class="fas fa-keyboard"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">NORD STAGE 3 88</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Create music on the Nord Stage 3 professional stage piano, a majestic instrument that has become the choice of many leading musicians. Its outstanding sonic flexibility and realism allow you to fully immerse yourself in your musical creativity.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Professional stage piano</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Outstanding sonic flexibility</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Perfect for any genre</li>
+                </ul>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary); padding: 2rem 0 3rem 0;">
+    <div class="container">
+        <div class="row"><div class="col-lg-8 mx-auto text-center mb-3">
+            <h2 class="section-title">Additional Equipment</h2>
+            <p class="section-subtitle">Complete professional setup</p>
+        </div></div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6"><div class="service-card">
+                <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Analog Outboard</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">1073, 1176, LA-2A compressors and preamps for that classic analog sound.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Neve 1073 preamps</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>1176 compressors</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>LA-2A leveling amplifiers</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-4 col-md-6"><div class="service-card">
+                <div class="service-icon"><i class="fas fa-hdd"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">RME Fireface UFX+</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">High-quality AD/DA converter for pristine audio conversion and ultra-low latency.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Ultra-low latency</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Pristine audio quality</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Professional grade</li>
+                </ul>
+            </div></div>
+            <div class="col-lg-4 col-md-6"><div class="service-card">
+                <div class="service-icon"><i class="fas fa-tools"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Sonarworks SoundID</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Acoustic room correction system for accurate monitoring and perfect mixes.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Room correction</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Accurate monitoring</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Professional calibration</li>
+                </ul>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row"><div class="col-lg-8 mx-auto text-center mb-5">
+            <h2 class="section-title">Studio Features</h2>
+            <p class="section-subtitle">Professional environment for your creativity</p>
+        </div></div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-icon"><i class="fas fa-volume-up"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Acoustic Treatment</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Professional acoustic treatment for accurate sound reproduction and perfect monitoring.</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-icon"><i class="fas fa-plug"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">High-End Cables</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Premium cables and connectors for minimal signal loss and maximum quality.</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-icon"><i class="fas fa-laptop"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Latest Software</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Cubase Pro, modern plugins and top VST instruments for professional production.</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Professional Lighting</h5>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Comfortable lighting setup for long recording sessions and perfect atmosphere.</p>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <div class="row"><div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-title">Ready to Record?</h2>
+            <p class="section-subtitle">Experience our professional equipment and create amazing music</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="{% url 'booking:booking' %}" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Book Studio Time</a>
+                <a href="{% url 'booking:services' %}" class="btn btn-outline-light"><i class="fas fa-list me-2"></i>Our Services</a>
+            </div>
+        </div></div>
+    </div>
+</section>
+{% endblock %}
+

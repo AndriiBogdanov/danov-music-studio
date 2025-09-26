@@ -1,0 +1,222 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}About - Danov Music Studio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero" style="min-height: 45vh;">
+    <!-- Background Video -->
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="display-4 fw-bold mb-4" style="font-size: 3.5rem;">
+                    About Danov Music Studio
+                </h1>
+                <p class="lead ukrainian-gradient">
+                    The first Ukrainian recording studio in Berlin
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6" style="padding-right: 2rem;">
+                <h2 class="section-title text-start">DANOV MUSIC</h2>
+                <h3 class="text-accent mb-4">The first Ukrainian recording studio in Berlin</h3>
+                
+                <p class="lead mb-4">
+                    DANOV (Nikita Bogdanov) is Berlin-based music producer from Ukraine, who also founded the first Ukrainian studio in Berlin.
+                </p>
+                
+                <p class="mb-4">
+                    A musical producer and DJ with over 17 years of experience in creating electronic music, mixing, and mastering. Formerly known as part of the duo Ost & Meyer.
+                </p>
+                
+                <div class="producer-info mb-4">
+                    <h4 class="text-accent">Nikita Bogdanov</h4>
+                    <p>
+                        For years, his music has received repeated support from top global DJs, including David Guetta, Tiësto, Don Diablo, Armin van Buuren, Above & Beyond, Paul van Dyk, and many others. Currently, Nikita Bogdanov serves as a producer and composer for the artist Raja.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-6" style="padding-left: 2rem;">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        {% load static %}
+                        <div class="team-photo">
+                            <img src="{% static 'images/Nikita1.png' %}" alt="Nikita Bogdanov" class="img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="team-photo">
+                            <img src="{% static 'images/Nikita2.png' %}" alt="Nikita Bogdanov Studio" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h5 class="card-title">Professional Experience</h5>
+                        <p class="card-text">
+                            17+ years in electronic music production, mixing, and mastering
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Former member of Ost & Meyer</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Supported by top global DJs</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Producer & composer for Raja</li>
+                            <li><i class="fas fa-check text-success me-2"></i>First Ukrainian studio in Berlin</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive music production services</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h5>All Types of Sound Recording</h5>
+                    <p>Professional recording services for vocals, instruments, and full bands with the highest quality equipment.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h5>Music & Lyrics Creation</h5>
+                    <p>Creation of music and lyrics that highlight your uniqueness and artistic vision.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h5>Artist Promotion</h5>
+                    <p>Assistance in artist promotion - your success is our goal! We help you reach the international stage.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Studio Features Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Why Choose Danov Music?</h2>
+        <p class="section-subtitle">Professional approach to every project</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h5 class="card-title">Proven Track Record</h5>
+                        <p class="card-text">
+                            Music supported by David Guetta, Tiësto, Don Diablo, and other top DJs
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5 class="card-title">17+ Years Experience</h5>
+                        <p class="card-text">
+                            Decades of experience in electronic music production and sound engineering
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h5 class="card-title">International Reach</h5>
+                        <p class="card-text">
+                            Help you shine on the international stage alongside established artists
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h5 class="card-title">Passion for Music</h5>
+                        <p class="card-text">
+                            Dedicated to bringing your musical vision to life with the highest quality
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title">Ready to Create at the Highest Level?</h2>
+                <p class="section-subtitle">
+                    Choose "DANOV MUSIC" and gain the opportunity to create at the highest level! Allow your music to shine on the international stage alongside us.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="{% url 'booking:portfolio' %}" class="btn btn-outline-light">
+                        <i class="fas fa-music me-2"></i>View Portfolio
+                    </a>
+                    <a href="{% url 'booking:booking' %}" class="btn btn-primary">
+                        <i class="fas fa-calendar-plus me-2"></i>Book Studio Time
+                    </a>
+                    <a href="{% url 'booking:contact' %}" class="btn btn-outline-light">
+                        <i class="fas fa-envelope me-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

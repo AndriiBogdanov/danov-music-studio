@@ -1,0 +1,173 @@
+{% extends 'booking/base.html' %}
+{% load static %}
+
+{% block title %}Danov Music Studio - Берлин{% endblock %}
+{% block body_class %}home-page{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-video-background">
+        <video autoplay muted loop playsinline preload="none" poster="{% static 'images/studio-bg.jpg' %}">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col-lg-6 hero-content">
+                <h1 class="display-4 fw-bold mb-4">Создавайте <span class="text-gradient">профессиональный звук</span> для ваших проектов</h1>
+                <p class="lead mb-4">Профессиональная музыкальная студия в Берлине для записи, сведения и мастеринга. Современное оборудование и опытные инженеры помогут воплотить ваши музыкальные идеи.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="{% url 'booking:booking' %}" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать студию</a>
+                    <a href="{% url 'booking:services' %}" class="btn btn-outline-light"><i class="fas fa-list me-2"></i>Наши услуги</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-image" style="margin-top: 0.5rem;">
+                    <img src="{% static 'images/Logo1.png' %}" alt="Danov Music Studio" class="img-fluid" loading="lazy" style="max-width: 600px; width: 100%; height: auto; filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 30px rgba(139, 92, 246, 0.4)) drop-shadow(0 0 60px rgba(139, 92, 246, 0.2));">
+                    <h3 class="text-white" style="margin-top: -10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(139, 92, 246, 0.3), 0 0 45px rgba(139, 92, 246, 0.2);">Музыкальная продакшн‑студия</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <p class="section-subtitle">Профессиональный подход к каждому проекту</p>
+        <div class="row g-3">
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100"><div class="card-body text-center">
+                    <div class="service-icon"><i class="fas fa-microphone"></i></div>
+                    <h5 class="card-title">Профессиональная запись</h5>
+                    <p class="card-text">Мы используем только качественное оборудование для чистого и прозрачного звука</p>
+                </div></div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100"><div class="card-body text-center">
+                    <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                    <h5 class="card-title">Сведение и мастеринг</h5>
+                    <p class="card-text">Опытные инженеры добиваются сбалансированного коммерческого звучания</p>
+                </div></div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100"><div class="card-body text-center">
+                    <div class="service-icon"><i class="fas fa-clock"></i></div>
+                    <h5 class="card-title">Гибкий график</h5>
+                    <p class="card-text">Работаем в удобное время, включая выходные и праздники</p>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
+        <p class="section-subtitle">Полный спектр для ваших музыкальных проектов</p>
+        <div class="row g-2">
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/recording.png' %}" alt="Запись" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h5>Запись</h5>
+                <div class="service-price">70€/час</div>
+                <p>🎤 Точная запись — звучите как ПРО</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mixing.png' %}" alt="Сведение" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                <h5>Сведение</h5>
+                <div class="service-price">от 200€</div>
+                <p>Профессиональное сведение для коммерческого звучания</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mastering.png' %}" alt="Мастеринг" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-compact-disc"></i></div>
+                <h5>Мастеринг</h5>
+                <div class="service-price">50€/час</div>
+                <p>🚀 Громко, чисто и готово к релизу</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Music Production.png' %}" alt="Продакшн" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-music"></i></div>
+                <h5>Музыкальный продакшн</h5>
+                <div class="service-price">от 400€</div>
+                <p>🎶 От идеи до хита — индивидуальный продакшн</p>
+            </div></div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'booking:services' %}" class="btn btn-primary"><i class="fas fa-list me-2"></i>Все услуги</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title text-start">О нашей студии</h2>
+                <p class="lead mb-2">Danov Music Studio — современная студия в Берлине с профессиональным оборудованием для качественной музыки.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Профессиональное оборудование</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Опытные инженеры</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Удобное расположение в Берлине</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Конкурентные цены</li>
+                </ul>
+                <a href="{% url 'booking:about' %}" class="btn btn-outline-light"><i class="fas fa-info-circle me-2"></i>Подробнее</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="card"><div class="card-body text-center">
+                    <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h5 class="card-title">Наше оборудование</h5>
+                    <p class="card-text">Мы используем профессиональное оборудование ведущих производителей для максимального качества звука.</p>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title text-start">Знакомьтесь: продюсер</h2>
+                <h3 class="text-accent mb-2">Никита Богданов (DANOV)</h3>
+                <p class="lead mb-3">Музыкальный продюсер и диджей с 17+ годами опыта в электронной музыке, сведении и мастеринге. Ранее участник дуэта Ost & Meyer.</p>
+                <a href="{% url 'booking:about' %}" class="btn btn-outline-light"><i class="fas fa-user-tie me-2"></i>Полная биография</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-2">
+                    <div class="col-md-6"><div class="team-photo"><img src="{% static 'images/Nikita1.png' %}" alt="Nikita Bogdanov" class="img-fluid rounded"></div></div>
+                    <div class="col-md-6"><div class="team-photo"><img src="{% static 'images/Nikita2.png' %}" alt="Nikita Bogdanov Studio" class="img-fluid rounded"></div></div>
+                </div>
+                <div class="card mt-3"><div class="card-body text-center">
+                    <div class="service-icon"><i class="fas fa-award"></i></div>
+                    <h5 class="card-title">17+ лет опыта</h5>
+                    <p class="card-text">Профессиональный продакшн с международным признанием</p>
+                    <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <span class="badge bg-primary">Electronic Music</span>
+                        <span class="badge bg-primary">Mixing</span>
+                        <span class="badge bg-primary">Mastering</span>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row"><div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-title">Готовы начать?</h2>
+            <p class="section-subtitle">Свяжитесь с нами или забронируйте студию прямо сейчас</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="{% url 'booking:booking' %}" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Забронировать</a>
+                <a href="{% url 'booking:contact' %}" class="btn btn-outline-light"><i class="fas fa-envelope me-2"></i>Контакты</a>
+            </div>
+        </div></div>
+    </div>
+</section>
+{% endblock %}
+

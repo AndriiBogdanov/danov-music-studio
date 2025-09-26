@@ -1,0 +1,286 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Dienstleistungen - Danov Music Studio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero" style="min-height: 45vh;">
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="display-4 fw-bold mb-4">Unsere Dienstleistungen</h1>
+                <p class="lead fw-bold">Professionelle Musikproduktionsdienstleistungen in Berlin</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Studio-Dienstleistungen</h2>
+        <p class="section-subtitle">Professionelle Leistungen für dein Musikprojekt · <a href="{% url 'booking:faq' %}" class="link-light">Mehr Antworten im FAQ</a></p>
+        <div class="row g-4">
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                {% load static %}
+                <div class="service-image"><img src="{% static 'images/recording.png' %}" alt="Aufnahme" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Aufnahme</h5>
+                <div class="service-price mb-3">70€/Stunde</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🎤 Präzise Aufnahme — klinge wie ein PRO. Professionelle Aufnahme mit hochwertiger Ausrüstung.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Professionelle Mikrofone</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Akustische Behandlung</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Grundlegende Bearbeitung</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Kompression und EQ</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=recording" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Jetzt buchen</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mixing.png' %}" alt="Mixing" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Mixing</h5>
+                <div class="service-price mb-3">ab 200€</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Danach — +10€ pro Spur/Instrument. Duplikate werden mit 5€/Spur berechnet.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Pegelausgleich</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Panorama</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>EQ und Kompression</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Effekte und Hall</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=mixing" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Jetzt buchen</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mastering.png' %}" alt="Mastering" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-compact-disc"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Mastering</h5>
+                <div class="service-price mb-3">50€/Stunde</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🚀 Laut, klar und bereit für den Release — professionelles Mastering.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Finale Equalisation</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Multiband-Kompression</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Limiting</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Release-Vorbereitung</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=mastering" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Jetzt buchen</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Music Production.png' %}" alt="Musikproduktion" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-music"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Musikproduktion</h5>
+                <div class="service-price mb-3">ab 400€</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🎶 Von der Idee zum Hit — individuelle Musikproduktion.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Maßgeschneiderte Arrangements</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Akkordfolgen</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Instrumentierung</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Vollständige Produktion</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=production" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Jetzt buchen</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/vocal cleanup.png' %}" alt="Vocal Cleanup" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-magic"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Vocal Cleanup</h5>
+                <div class="service-price mb-3">100€ bis 200€</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">Warping und Tuning — professionelle Gesangsreinigung und -bearbeitung.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Rauschunterdrückung</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Intonationskorrektur</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Atemkontrolle</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Finaler Schliff</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=vocal_cleanup" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Jetzt buchen</a></div>
+            </div></div>
+            <div class="col-lg-6 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/vocal tuning.png' %}" alt="Vocal Tuning" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-wave-square"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Vocal Tuning</h5>
+                <div class="service-price mb-3">100€/Stunde</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🎶 Perfekte Tonhöhe und natürlicher Klang — professionelles Gesangstuning.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Tonhöhenkorrektur</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Natürliches Tuning</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Melodyne/Auto-Tune</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Professionelle Ergebnisse</li>
+                </ul>
+                <div class="text-center mt-4"><a href="{% url 'booking:booking' %}?service=vocal_tuning" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Jetzt buchen</a></div>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section faq-section">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="fas fa-question-circle me-3" style="color: var(--accent-color);"></i>
+            FAQ
+        </h2>
+        <p class="section-subtitle">Häufig gestellte Fragen zu unseren Dienstleistungen</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="service-card">
+                    <div class="accordion" id="faqServicesDe">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="deq1h">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#deq1">
+                                    Wie viel kostet das Mixing?
+                                </button>
+                            </h2>
+                            <div id="deq1" class="accordion-collapse collapse show" data-bs-parent="#faqServicesDe">
+                                <div class="accordion-body">
+                                    Mixing ab 200€ — abhängig von Spuranzahl und Komplexität.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="deq2h">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#deq2">
+                                    Was ist im Mastering enthalten?
+                                </button>
+                            </h2>
+                            <div id="deq2" class="accordion-collapse collapse" data-bs-parent="#faqServicesDe">
+                                <div class="accordion-body">
+                                    Finales EQ, Multiband‑Kompression, Limiting und Release‑Vorbereitung.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="deq3h">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#deq3">
+                                    Kann ich mehrere Stunden buchen?
+                                </button>
+                            </h2>
+                            <div id="deq3" class="accordion-collapse collapse" data-bs-parent="#faqServicesDe">
+                                <div class="accordion-body">
+                                    Ja. Wähle die Dauer im Buchungsformular oder kontaktiere uns.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <a href="{% url 'booking:faq' %}" class="btn btn-outline-light">
+                            <i class="fas fa-arrow-right me-2"></i>
+                            Mehr Antworten im FAQ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary); padding: 3rem 0;">
+    <div class="container">
+        <h2 class="section-title mb-3">Studio-Vermietung</h2>
+        <p class="section-subtitle mb-5">Wähle die perfekte Option für dein Projekt</p>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-5 col-md-6"><div class="service-card rental-card text-center h-100">
+                <div class="service-icon mb-3"><i class="fas fa-clock"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Stundensatz</h5>
+                <div class="service-price mb-3">70€/Stunde</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">⏱️ Professionelle Aufnahme und grundlegende Bearbeitung pro Stunde.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Professionelle Aufnahme</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Grundlegende Bearbeitung</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Ausrüstung inklusive</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Ingenieur-Support</li>
+                </ul>
+                <div class="text-center mt-auto"><a href="{% url 'booking:booking' %}?service=hourly" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Jetzt buchen</a></div>
+            </div></div>
+            <div class="col-lg-5 col-md-6"><div class="service-card rental-card text-center h-100">
+                <div class="service-icon mb-3"><i class="fas fa-building"></i></div>
+                <h5 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Tagesmiete</h5>
+                <div class="service-price mb-3">450€/Tag</div>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">🏢 Dein Studio, deine Zeit — ganztägige Miete mit vollständigem Zugang.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>12 Stunden Studiozeit</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Vollständiger Ausrüstungszugang</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Professioneller Ingenieur</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Vollständige Produktion</li>
+                </ul>
+                <div class="text-center mt-auto"><a href="{% url 'booking:booking' %}?service=daily" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Jetzt buchen</a></div>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding: 3rem 0;">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6"><div class="card text-center h-100"><div class="card-body">
+                <div class="info-icon mb-3"><i class="fas fa-clock"></i></div>
+                <h3 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Öffnungszeiten</h3>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">⏰ Studio-Zeitplan für deine Bequemlichkeit</p>
+                <div class="schedule-list">
+                    <div class="schedule-item"><span class="schedule-day">Montag - Freitag</span><span class="schedule-time">9:00 - 21:30</span></div>
+                    <div class="schedule-item"><span class="schedule-day">Samstag</span><span class="schedule-time closed">Geschlossen</span></div>
+                    <div class="schedule-item"><span class="schedule-day">Sonntag</span><span class="schedule-time closed">Geschlossen</span></div>
+                </div>
+            </div></div></div>
+            <div class="col-lg-4 col-md-6"><div class="card text-center h-100"><div class="card-body">
+                <div class="info-icon mb-3"><i class="fas fa-address-book"></i></div>
+                <h3 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Kontaktiere uns</h3>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">📞 Kontaktiere uns für Buchungen und Anfragen</p>
+                <div class="contact-list">
+                    <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span class="contact-text">Bonifaziusstraße 16-18, 13509 Berlin, Germany</span></div>
+                    <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span class="contact-text">danovmusic@gmail.com</span></div>
+                    <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span class="contact-text">+49 175 413 75 18</span></div>
+                </div>
+            </div></div></div>
+            <div class="col-lg-4 col-md-6"><div class="card text-center h-100"><div class="card-body">
+                <div class="info-icon mb-3"><i class="fas fa-map-marker-alt"></i></div>
+                <h3 class="mb-3 fw-bold text-accent" style="font-size:1.4rem;letter-spacing:.5px;">Studio-Standort</h3>
+                <p class="mb-4" style="font-size:1rem;line-height:1.6;color:var(--text-secondary);">📍 Finde uns im Herzen Berlins</p>
+                <div class="contact-list"><div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span class="contact-text">Bonifaziusstraße 16-18, 13509 Berlin, Germany</span></div></div>
+            </div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary); padding: 2.5rem 0;">
+    <div class="container"><div class="row"><div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-title mb-3">Bereit zu starten?</h2>
+        <p class="section-subtitle mb-4">Buche deine Studiozeit und erstelle professionelle Musik</p>
+        <a href="{% url 'booking:booking' %}" class="btn btn-primary btn-lg"><i class="fas fa-calendar-plus me-2"></i>Studio buchen</a>
+    </div></div></div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "Wie viel kostet das Mixing?","acceptedAnswer": {"@type": "Answer","text": "Mixing ab 200€ — abhängig von Spuranzahl und Komplexität."}},
+    {"@type": "Question","name": "Was ist im Mastering enthalten?","acceptedAnswer": {"@type": "Answer","text": "Finales EQ, Multiband‑Kompression, Limiting und Release‑Vorbereitung."}},
+    {"@type": "Question","name": "Kann ich mehrere Stunden buchen?","acceptedAnswer": {"@type": "Answer","text": "Ja. Wähle die Dauer im Buchungsformular oder kontaktiere uns."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "Service","name": "Aufnahme","areaServed": "Berlin","serviceType": "Recording","description": "Professionelle Aufnahme mit hochwertiger Ausrüstung","offers": {"@type": "Offer","priceCurrency": "EUR","price": "70","unitCode": "HUR"}},
+    {"@type": "Service","name": "Mixing","areaServed": "Berlin","serviceType": "Mixing","description": "Releasefertiger Mix mit Balance, EQ, Kompression und Effekten","offers": {"@type": "Offer","priceCurrency": "EUR","price": "200","priceSpecification": {"@type": "PriceSpecification","price": "200","priceCurrency": "EUR","name": "from"}}},
+    {"@type": "Service","name": "Mastering","areaServed": "Berlin","serviceType": "Mastering","description": "Laut, klar und bereit für den Release","offers": {"@type": "Offer","priceCurrency": "EUR","price": "50","unitCode": "HUR"}},
+    {"@type": "Service","name": "Musikproduktion","areaServed": "Berlin","serviceType": "Music Production","description": "Von der Idee zum fertigen Track — maßgeschneiderte Produktion","offers": {"@type": "Offer","priceCurrency": "EUR","price": "400","priceSpecification": {"@type": "PriceSpecification","price": "400","priceCurrency": "EUR","name": "from"}}}
+  ]
+}
+</script>
+{% endblock %}

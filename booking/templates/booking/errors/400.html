@@ -1,0 +1,35 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Bad Request - Danov Music Studio{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="error-page">
+                <h1 class="display-1">400</h1>
+                <h2 class="mb-4">Bad Request</h2>
+                <p class="lead">Your request could not be understood by the server.</p>
+                <p>This usually happens when the request format is incorrect.</p>
+                <a href="{% url 'home' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-home me-2"></i>Return to Home
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-page {
+    padding: 50px 0;
+}
+.error-page h1 {
+    font-size: 6rem;
+    color: #dc3545;
+    font-weight: bold;
+}
+.error-page h2 {
+    color: #6c757d;
+}
+</style>
+{% endblock %} 

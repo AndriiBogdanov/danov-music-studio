@@ -1,0 +1,245 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Gallery - Nikita Bogdanov Music Studio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero" style="min-height: 60vh;">
+    <!-- Background Video -->
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="display-4 fw-bold mb-4">
+                    Nikita Bogdanov's Studio
+                </h1>
+                <p class="lead">
+                    Inside the creative space of Berlin's premier music producer
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Studio Overview -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">The Studio</h2>
+        <p class="section-subtitle">Where professional music comes to life in the heart of Berlin</p>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    {% load static %}
+                    <img src="{% static 'images/Gallery1.png' %}" alt="Chill Zone" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Chill Zone</h5>
+                            <p>Spacious recording room with professional acoustic treatment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    <img src="{% static 'images/gallery2.png' %}" alt="Control Zone Setup" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Control Zone</h5>
+                            <p>Heart of the studio with professional mixing console</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    <img src="{% static 'images/gallery3.png' %}" alt="Recording Zone Setup" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Recording Zone</h5>
+                            <p>Intimate vocal recording space with premium microphones</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Services Overview -->
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <h2 class="section-title">Studio Services</h2>
+        <p class="section-subtitle">Complete music production from recording to mastering</p>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    <img src="{% static 'images/recording.png' %}" alt="Recording Services" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Recording</h5>
+                            <p>Professional multi-track recording with premium microphones</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    <img src="{% static 'images/Mixing.png' %}" alt="Mixing Services" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Mixing</h5>
+                            <p>Professional mixing with analog and digital processing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    <img src="{% static 'images/Mastering.png' %}" alt="Mastering Services" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Mastering</h5>
+                            <p>Final polish and optimization for all playback systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    <img src="{% static 'images/Music Production.png' %}" alt="Music Production" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Music Production</h5>
+                            <p>Full-scale music production from arrangement to final mix</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    <img src="{% static 'images/vocal cleanup.png' %}" alt="Vocal Cleanup" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Vocal Cleanup</h5>
+                            <p>Professional vocal editing and noise reduction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    <img src="{% static 'images/vocal tuning.png' %}" alt="Vocal Tuning" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Vocal Tuning</h5>
+                            <p>Precise pitch correction with Melodyne and Auto-Tune Pro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Meet Nikita -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Meet Nikita Bogdanov</h2>
+        <p class="section-subtitle">Berlin-based producer with over 10 years of experience</p>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    <img src="{% static 'images/Nikita1.png' %}" alt="Nikita Bogdanov Portrait" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Nikita Bogdanov</h5>
+                            <p>Music Producer & Audio Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="gallery-item">
+                    <img src="{% static 'images/Nikita2.png' %}" alt="Nikita at Work" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>In the Studio</h5>
+                            <p>Nikita working on mixing and production</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+</section>
+
+<!-- Daily Rental -->
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <h2 class="section-title">Studio Rental</h2>
+        <p class="section-subtitle">Rent the complete studio for your project</p>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="gallery-item">
+                    <img src="{% static 'images/daily rental.png' %}" alt="Studio Rental" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Daily Studio Rental</h5>
+                            <p>Full access to professional studio with all equipment included</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title">Ready to Create?</h2>
+                <p class="section-subtitle">
+                    Book your session with Nikita and take your music to the next level
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="{% url 'booking:booking' %}" class="btn btn-primary">
+                        <i class="fas fa-calendar-plus me-2"></i>Book Studio Session
+                    </a>
+                    <a href="{% url 'booking:services' %}" class="btn btn-outline-light">
+                        <i class="fas fa-list me-2"></i>View Services
+                    </a>
+                    <a href="{% url 'booking:contact' %}" class="btn btn-outline-light">
+                        <i class="fas fa-phone me-2"></i>Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

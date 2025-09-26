@@ -1,0 +1,130 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Über uns - Danov Music Studio{% endblock %}
+
+{% block content %}
+<section class="hero" style="min-height: 45vh;">
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Ihr Browser unterstützt das Video-Tag nicht.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="display-4 fw-bold mb-4" style="font-size: 3.5rem;">Über Danov Music Studio</h1>
+                <p class="lead ukrainian-gradient">Erstes ukrainisches Aufnahmestudio in Berlin</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6" style="padding-right: 2rem;">
+                <h2 class="section-title text-start">DANOV MUSIC</h2>
+                <h3 class="text-accent mb-4">Das erste ukrainische Aufnahmestudio in Berlin</h3>
+                <p class="lead mb-4">DANOV (Nikita Bogdanov) ist ein Musikproduzent aus der Ukraine mit Wohnsitz in Berlin und Gründer des ersten ukrainischen Studios der Stadt.</p>
+                <p class="mb-4">Musikproduzent und DJ mit über 17 Jahren Erfahrung in elektronischer Musik, Mixing und Mastering. Früher Teil des Duos Ost & Meyer.</p>
+                <div class="producer-info mb-4">
+                    <h4 class="text-accent">Nikita Bogdanov</h4>
+                    <p>Seine Musik wird seit Jahren von Top‑DJs unterstützt: David Guetta, Tiësto, Don Diablo, Armin van Buuren, Above & Beyond, Paul van Dyk u. a. Aktuell Produzent und Komponist für den Künstler Raja.</p>
+                </div>
+            </div>
+            <div class="col-lg-6" style="padding-left: 2rem;">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        {% load static %}
+                        <div class="team-photo"><img src="{% static 'images/Nikita1.png' %}" alt="Nikita Bogdanov" class="img-fluid rounded"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="team-photo"><img src="{% static 'images/Nikita2.png' %}" alt="Nikita Bogdanov Studio" class="img-fluid rounded"></div>
+                    </div>
+                </div>
+                <div class="card mt-3"><div class="card-body text-center">
+                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                    <h5 class="card-title">Berufserfahrung</h5>
+                    <p class="card-text">17+ Jahre in Produktion, Mixing und Mastering elektronischer Musik</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Ehem. Mitglied von Ost & Meyer</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Support von Top‑DJs weltweit</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Produzent & Komponist für Raja</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Erstes ukrainisches Studio in Berlin</li>
+                    </ul>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <h2 class="section-title">Unsere Leistungen</h2>
+        <p class="section-subtitle">Umfassende Services für Musikproduktion</p>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6"><div class="service-card">
+                <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h5>Alle Arten von Recording</h5>
+                <p>Professionelle Aufnahmen von Vocals, Instrumenten und Bands mit High‑End Equipment.</p>
+            </div></div>
+            <div class="col-lg-4 col-md-6"><div class="service-card">
+                <div class="service-icon"><i class="fas fa-music"></i></div>
+                <h5>Komposition & Texte</h5>
+                <p>Musik und Lyrics, die deine Einzigartigkeit und Vision unterstreichen.</p>
+            </div></div>
+            <div class="col-lg-4 col-md-6"><div class="service-card">
+                <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                <h5>Künstler‑Promotion</h5>
+                <p>Unterstützung beim Aufbau – dein Erfolg ist unser Ziel! Internationales Rampenlicht inklusive.</p>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Warum Danov Music?</h2>
+        <p class="section-subtitle">Professioneller Ansatz für jedes Projekt</p>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6"><div class="card h-100"><div class="card-body text-center">
+                <div class="service-icon"><i class="fas fa-award"></i></div>
+                <h5 class="card-title">Nachweisbare Erfolge</h5>
+                <p class="card-text">Support von David Guetta, Tiësto, Don Diablo u. a.</p>
+            </div></div></div>
+            <div class="col-lg-3 col-md-6"><div class="card h-100"><div class="card-body text-center">
+                <div class="service-icon"><i class="fas fa-clock"></i></div>
+                <h5 class="card-title">17+ Jahre Erfahrung</h5>
+                <p class="card-text">Langjährige Erfahrung in Produktion & Audio‑Engineering</p>
+            </div></div></div>
+            <div class="col-lg-3 col-md-6"><div class="card h-100"><div class="card-body text-center">
+                <div class="service-icon"><i class="fas fa-globe"></i></div>
+                <h5 class="card-title">Internationale Reichweite</h5>
+                <p class="card-text">Wir bringen dich auf die internationale Bühne</p>
+            </div></div></div>
+            <div class="col-lg-3 col-md-6"><div class="card h-100"><div class="card-body text-center">
+                <div class="service-icon"><i class="fas fa-heart"></i></div>
+                <h5 class="card-title">Leidenschaft für Musik</h5>
+                <p class="card-text">Wir setzen deine Vision in höchster Qualität um</p>
+            </div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <div class="row"><div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-title">Bereit für Produktionen auf Top‑Niveau?</h2>
+            <p class="section-subtitle">Wähle „DANOV MUSIC“ und produziere auf höchstem Level! Lass deine Musik international glänzen – gemeinsam mit uns.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="{% url 'booking:portfolio' %}" class="btn btn-outline-light"><i class="fas fa-music me-2"></i>Portfolio ansehen</a>
+                <a href="{% url 'booking:booking' %}" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Studio buchen</a>
+                <a href="{% url 'booking:contact' %}" class="btn btn-outline-light"><i class="fas fa-envelope me-2"></i>Kontakt</a>
+            </div>
+        </div></div>
+    </div>
+</section>
+{% endblock %}

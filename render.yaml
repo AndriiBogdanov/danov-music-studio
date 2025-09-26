@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: danov-music-studio
+    env: python
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: gunicorn danovmusic_studio.wsgi:application
+    preDeployCommand: python manage.py migrate --noinput
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: DJANGO_SETTINGS_MODULE
+        value: danovmusic_studio.settings_render
+
+databases:
+  - name: danov-music-studio-db
+    databaseName: danovmusicstudio
+    user: danovmusicstudio 

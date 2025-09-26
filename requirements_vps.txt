@@ -1,0 +1,33 @@
+# VPS Production Requirements for Danov Music Studio
+# Core Django and web server
+Django==5.2.4
+gunicorn==21.2.0
+whitenoise==6.6.0
+
+# Database
+psycopg2-binary==2.9.9
+dj-database-url==2.1.0
+
+# Security and forms
+django-recaptcha==4.1.0
+django-csp==3.7
+django-axes==6.1.1
+django-ratelimit==4.1.0
+
+# Environment and utilities
+python-dotenv==1.0.0
+polib==1.2.0
+
+# Core dependencies
+asgiref==3.9.0
+sqlparse==0.5.3
+tzdata==2025.2
+
+# Production caching (optional)
+pymemcache==4.0.0
+
+# Monitoring and logging (optional)
+sentry-sdk==1.45.0
+
+
+

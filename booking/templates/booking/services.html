@@ -1,0 +1,345 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Services - Danov Music Studio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero" style="min-height: 45vh;">
+    <!-- Background Video -->
+    <div class="hero-video-background">
+        {% load static %}
+        <video autoplay muted loop playsinline preload="none">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="display-4 fw-bold mb-4">
+                    Our Services
+                </h1>
+                <p class="lead fw-bold">
+                    Professional music production services in Berlin
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Studio Services</h2>
+        <p class="section-subtitle">Professional services for your music projects</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card">
+                    {% load static %}
+                    <div class="service-image">
+                        <img src="{% static 'images/recording.png' %}" alt="Recording" class="img-fluid">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h5 class="mb-3 fw-bold text-accent" style="font-size: 1.4rem; letter-spacing: 0.5px;">Recording</h5>
+                    <div class="service-price mb-3">70€/hour</div>
+                    <p class="mb-4" style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary);">🎤 Record with precision, sound like a PRO. Professional recording with high-quality equipment.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Professional microphones</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Acoustic treatment</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Basic processing</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Compression and EQ</li>
+                    </ul>
+                    <div class="text-center mt-4">
+                        <a href="{% url 'booking:booking' %}?service=recording" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus me-2"></i>Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/Mixing.png' %}" alt="Mixing" class="img-fluid">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h5 class="mb-3 fw-bold text-accent" style="font-size: 1.4rem; letter-spacing: 0.5px;">Mixing</h5>
+                    <div class="service-price mb-3">from 200€</div>
+                    <p class="mb-4" style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary);">After that, +10€ per track/instrument. Duplicate instruments are charged at 5€/track.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Level balancing</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Panoraming</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>EQ and compression</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Effects and reverb</li>
+                    </ul>
+                    <div class="text-center mt-4">
+                        <a href="{% url 'booking:booking' %}?service=mixing" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus me-2"></i>Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/Mastering.png' %}" alt="Mastering" class="img-fluid">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-compact-disc"></i>
+                    </div>
+                    <h5 class="mb-3 fw-bold text-accent" style="font-size: 1.4rem; letter-spacing: 0.5px;">Mastering</h5>
+                    <div class="service-price mb-3">50€/hour</div>
+                    <p class="mb-4" style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary);">🚀 Loud, clear, and ready for release – professional mastering.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Final equalization</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Multiband compression</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Limiting</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Release preparation</li>
+                    </ul>
+                    <div class="text-center mt-4">
+                        <a href="{% url 'booking:booking' %}?service=mastering" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus me-2"></i>Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/Music Production.png' %}" alt="Music Production" class="img-fluid">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h5 class="mb-3 fw-bold text-accent" style="font-size: 1.4rem; letter-spacing: 0.5px;">Music Production</h5>
+                    <div class="service-price mb-3">from 400€</div>
+                    <p class="mb-4" style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary);">🎶 From idea to hit – custom music production.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Custom arrangements</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Chord progressions</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Instrumentation</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Full production</li>
+                    </ul>
+                    <div class="text-center mt-4">
+                        <a href="{% url 'booking:booking' %}?service=production" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus me-2"></i>Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/vocal cleanup.png' %}" alt="Vocal Cleanup" class="img-fluid">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h5 class="mb-3 fw-bold text-accent" style="font-size: 1.4rem; letter-spacing: 0.5px;">Vocal Cleanup</h5>
+                    <div class="service-price mb-3">from 100€ to 200€</div>
+                    <p class="mb-4" style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary);">Warping and tuning - professional vocal cleanup and processing.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Noise reduction</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Vocal tuning</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Breath control</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Final polish</li>
+                    </ul>
+                    <div class="text-center mt-4">
+                        <a href="{% url 'booking:booking' %}?service=vocal_cleanup" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus me-2"></i>Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/vocal tuning.png' %}" alt="Vocal Tuning" class="img-fluid">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <h5 class="mb-3 fw-bold text-accent" style="font-size: 1.4rem; letter-spacing: 0.5px;">Vocal Tuning</h5>
+                    <div class="service-price mb-3">100€/hour</div>
+                    <p class="mb-4" style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary);">🎶 Perfect pitch, natural feel – Pro vocal tuning.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Pitch correction</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Natural tuning</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Melodyne/Auto-Tune</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Professional results</li>
+                    </ul>
+                    <div class="text-center mt-4">
+                        <a href="{% url 'booking:booking' %}?service=vocal_tuning" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus me-2"></i>Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="section" style="background: var(--dark-secondary); padding: 3rem 0;">
+    <div class="container">
+        <h2 class="section-title mb-3">Studio Rental</h2>
+        <p class="section-subtitle mb-5">Choose the perfect option for your project</p>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-5 col-md-6">
+                <div class="service-card rental-card text-center h-100">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h5 class="mb-3 fw-bold text-accent" style="font-size: 1.4rem; letter-spacing: 0.5px;">Hourly Rate</h5>
+                    <div class="service-price mb-3">70€/hour</div>
+                    <p class="mb-4" style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary);">⏱️ Professional recording and basic processing per hour.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Professional recording</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Basic processing</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Equipment included</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Engineer support</li>
+                    </ul>
+                    <div class="text-center mt-auto">
+                        <a href="{% url 'booking:booking' %}?service=hourly" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus me-2"></i>Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-5 col-md-6">
+                <div class="service-card rental-card text-center h-100">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h5 class="mb-3 fw-bold text-accent" style="font-size: 1.4rem; letter-spacing: 0.5px;">Daily Rental</h5>
+                    <div class="service-price mb-3">450€/day</div>
+                    <p class="mb-4" style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary);">🏢 Your Studio, Your Time – Full-day rental with complete access.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>12 hours studio time</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Full equipment access</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Professional engineer</li>
+                        <li class="mb-2" style="font-size: 0.95rem;"><i class="fas fa-check text-success me-2"></i>Complete production</li>
+                    </ul>
+                    <div class="text-center mt-auto">
+                        <a href="{% url 'booking:booking' %}?service=daily" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus me-2"></i>Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Opening Hours Section -->
+<section class="section" style="padding: 3rem 0;">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="info-icon mb-3">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="mb-3 fw-bold text-accent" style="font-size: 1.4rem; letter-spacing: 0.5px;">Opening Hours</h3>
+                        <p class="mb-4" style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary);">⏰ Studio schedule for your convenience</p>
+                        
+                        <div class="schedule-list">
+                            <div class="schedule-item">
+                                <span class="schedule-day">Monday - Friday</span>
+                                <span class="schedule-time">9:00 - 21:30</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="schedule-day">Saturday</span>
+                                <span class="schedule-time closed">Closed</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="schedule-day">Sunday</span>
+                                <span class="schedule-time closed">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="info-icon mb-3">
+                            <i class="fas fa-address-book"></i>
+                        </div>
+                        <h3 class="mb-3 fw-bold text-accent" style="font-size: 1.4rem; letter-spacing: 0.5px;">Contact Us</h3>
+                        <p class="mb-4" style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary);">📞 Get in touch for bookings and inquiries</p>
+                        
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <span class="contact-text">Bonifaziusstraße 16-18, 13509 Berlin, Germany</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <span class="contact-text">danovmusic@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <span class="contact-text">+49 175 413 75 18</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="info-icon mb-3">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="mb-3 fw-bold text-accent" style="font-size: 1.4rem; letter-spacing: 0.5px;">Studio Location</h3>
+                        <p class="mb-4" style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary);">📍 Find us in the heart of Berlin</p>
+                        
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <span class="contact-text">Bonifaziusstraße 16-18, 13509 Berlin, Germany</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- CTA Section -->
+<section class="section" style="background: var(--dark-secondary); padding: 2.5rem 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title mb-3">Ready to Start?</h2>
+                <p class="section-subtitle mb-4">
+                    Book your studio time and create professional music
+                </p>
+                <a href="{% url 'booking:booking' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-calendar-plus me-2"></i>Book Studio
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

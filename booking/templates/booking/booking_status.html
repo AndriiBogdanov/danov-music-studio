@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Status - Debug</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .pending { background-color: #fff3cd; }
+        .confirmed { background-color: #d4edda; }
+        .cancelled { background-color: #f8d7da; }
+    </style>
+</head>
+<body>
+    <h1>Booking Status Debug</h1>
+    
+    <h2>Recent Bookings</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Duration</th>
+            <th>Status</th>
+            <th>Created</th>
+        </tr>
+        {% for booking in bookings %}
+        <tr class="{{ booking.status }}">
+            <td>{{ booking.id }}</td>
+            <td>{{ booking.name }}</td>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.time }}</td>
+            <td>{{ booking.duration }}h</td>
+            <td><strong>{{ booking.status }}</strong></td>
+            <td>{{ booking.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <h2>Available Times Check</h2>
+    <p>Checking available times for today...</p>
+    
+    <script>
+        // Auto-refresh every 10 seconds
+        setTimeout(function() {
+            window.location.reload();
+        }, 10000);
+    </script>
+</body>
+</html> 

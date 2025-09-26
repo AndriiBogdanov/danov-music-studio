@@ -1,0 +1,66 @@
+{% extends 'booking/base.html' %}
+{% block title %}FAQ - Danov Music Studio{% endblock %}
+{% block content %}
+<section class="hero" style="min-height: 35vh;">
+	<div class="hero-video-background">
+		{% load static %}
+		<video autoplay muted loop playsinline preload="none">
+			<source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+		</video>
+		<div class="video-overlay"></div>
+	</div>
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-9 hero-content">
+				<h1 class="display-5 fw-bold mb-3">FAQ</h1>
+				<p class="lead">Answers about booking, services, payments and more</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section">
+	<div class="container">
+		<div class="row g-4">
+			<div class="col-lg-8">
+				<div class="service-card p-4">
+					<div class="service-icon"><i class="fas fa-circle-question"></i></div>
+					<h2 class="section-title mb-3">General</h2>
+					<div class="accordion" id="faqGeneralEn">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="g1h"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#g1">How do I book a session?</button></h2>
+							<div id="g1" class="accordion-collapse collapse show" data-bs-parent="#faqGeneralEn"><div class="accordion-body">Go to Booking, choose date, time, duration and submit your request.</div></div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="g2h"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#g2">Can I cancel or reschedule?</button></h2>
+							<div id="g2" class="accordion-collapse collapse" data-bs-parent="#faqGeneralEn"><div class="accordion-body">Yes, contact us in advance to cancel or reschedule your session.</div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="card p-3">
+					<h5 class="mb-3">Need more help?</h5>
+					<p>Write us on email or book a free 10‑min call.</p>
+					<a href="{% url 'booking:contact' %}" class="btn btn-outline-primary btn-sm">Contact</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% block extra_js %}
+{{ block.super }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "How do I book a session?","acceptedAnswer": {"@type": "Answer","text": "Go to Booking, choose date, time, duration and submit your request."}},
+    {"@type": "Question","name": "Can I cancel or reschedule?","acceptedAnswer": {"@type": "Answer","text": "Yes, contact us in advance to cancel or reschedule your session."}}
+  ]
+}
+</script>
+{% endblock %}
+{% endblock %}
+

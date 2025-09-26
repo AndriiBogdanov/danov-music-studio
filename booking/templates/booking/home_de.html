@@ -1,0 +1,167 @@
+{% extends 'booking/base.html' %}
+{% load static %}
+
+{% block title %}Danov Music Studio - Berlin{% endblock %}
+{% block body_class %}home-page{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-video-background">
+        <video autoplay muted loop playsinline preload="none" poster="{% static 'images/studio-bg.jpg' %}">
+            <source src="{% static 'videos/gg3.mp4' %}" type="video/mp4">
+            Ihr Browser unterstützt das Video-Tag nicht.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col-lg-6 hero-content">
+                <h1 class="display-4 fw-bold mb-4">Erzeuge <span class="text-gradient">professionellen Sound</span> für deine Projekte</h1>
+                <p class="lead mb-4">Professionelles Musikstudio in Berlin für Recording, Mixing und Mastering. Moderne Ausstattung und erfahrene Engineers setzen deine Ideen um.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="{% url 'booking:booking' %}" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Studio buchen</a>
+                    <a href="{% url 'booking:services' %}" class="btn btn-outline-light"><i class="fas fa-list me-2"></i>Unsere Leistungen</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-image" style="margin-top: 0.5rem;">
+                    <img src="{% static 'images/Logo1.png' %}" alt="Danov Music Studio" class="img-fluid" loading="lazy" style="max-width: 600px; width: 100%; height: auto; filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 30px rgba(139, 92, 246, 0.4)) drop-shadow(0 0 60px rgba(139, 92, 246, 0.2));">
+                    <h3 class="text-white" style="margin-top: -10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(139, 92, 246, 0.3), 0 0 45px rgba(139, 92, 246, 0.2);">Music Production Studio</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Warum wir?</h2>
+        <p class="section-subtitle">Professioneller Ansatz für jedes Projekt</p>
+        <div class="row g-3">
+            <div class="col-lg-4 col-md-6"><div class="card h-100"><div class="card-body text-center">
+                <div class="service-icon"><i class="fas fa-microphone"></i></div>
+                <h5 class="card-title">Professionelles Recording</h5>
+                <p class="card-text">Nur hochwertige Technik für klaren, sauberen Klang</p>
+            </div></div></div>
+            <div class="col-lg-4 col-md-6"><div class="card h-100"><div class="card-body text-center">
+                <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                <h5 class="card-title">Mixing & Mastering</h5>
+                <p class="card-text">Erfahrene Engineers für ausgewogenen, kommerziellen Sound</p>
+            </div></div></div>
+            <div class="col-lg-4 col-md-6"><div class="card h-100"><div class="card-body text-center">
+                <div class="service-icon"><i class="fas fa-clock"></i></div>
+                <h5 class="card-title">Flexibler Zeitplan</h5>
+                <p class="card-text">Wir arbeiten zu deiner Wunschzeit – auch am Wochenende</p>
+            </div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <h2 class="section-title">Unsere Leistungen</h2>
+        <p class="section-subtitle">Komplettes Angebot für dein Musikprojekt</p>
+        <div class="row g-2">
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/recording.png' %}" alt="Recording" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h5>Recording</h5>
+                <div class="service-price">70€/Stunde</div>
+                <p>🎤 Präzise Aufnahme – klinge wie ein Pro</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mixing.png' %}" alt="Mixing" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+                <h5>Mixing</h5>
+                <div class="service-price">ab 200€</div>
+                <p>Professionelles Mixing für kommerziellen Sound</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Mastering.png' %}" alt="Mastering" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-compact-disc"></i></div>
+                <h5>Mastering</h5>
+                <div class="service-price">50€/Stunde</div>
+                <p>🚀 Laut, klar und release‑ready</p>
+            </div></div>
+            <div class="col-lg-3 col-md-6"><div class="service-card">
+                <div class="service-image"><img src="{% static 'images/Music Production.png' %}" alt="Music Production" class="img-fluid"></div>
+                <div class="service-icon"><i class="fas fa-music"></i></div>
+                <h5>Music Production</h5>
+                <div class="service-price">ab 400€</div>
+                <p>🎶 Von der Idee zum Hit – individueller Production</p>
+            </div></div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'booking:services' %}" class="btn btn-primary"><i class="fas fa-list me-2"></i>Alle Leistungen</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title text-start">Über unser Studio</h2>
+                <p class="lead mb-2">Danov Music Studio ist ein modernes Studio in Berlin mit professioneller Ausstattung für hochwertigen Sound.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Professionelle Ausstattung</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Erfahrene Tontechniker</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Zentrale Lage in Berlin</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Konkurrenzfähige Preise</li>
+                </ul>
+                <a href="{% url 'booking:about' %}" class="btn btn-outline-light"><i class="fas fa-info-circle me-2"></i>Mehr erfahren</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="card"><div class="card-body text-center">
+                    <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h5 class="card-title">Unsere Ausstattung</h5>
+                    <p class="card-text">Wir verwenden professionelle Geräte führender Hersteller für maximale Klangqualität.</p>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--dark-secondary);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title text-start">Der Produzent</h2>
+                <h3 class="text-accent mb-2">Nikita Bogdanov (DANOV)</h3>
+                <p class="lead mb-3">Musikproduzent und DJ mit über 17 Jahren Erfahrung in elektronischer Musikproduktion, Mixing und Mastering. Früher Teil des Duos Ost & Meyer.</p>
+                <a href="{% url 'booking:about' %}" class="btn btn-outline-light"><i class="fas fa-user-tie me-2"></i>Biografie</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-2">
+                    <div class="col-md-6"><div class="team-photo"><img src="{% static 'images/Nikita1.png' %}" alt="Nikita Bogdanov" class="img-fluid rounded"></div></div>
+                    <div class="col-md-6"><div class="team-photo"><img src="{% static 'images/Nikita2.png' %}" alt="Nikita Bogdanov Studio" class="img-fluid rounded"></div></div>
+                </div>
+                <div class="card mt-3"><div class="card-body text-center">
+                    <div class="service-icon"><i class="fas fa-award"></i></div>
+                    <h5 class="card-title">17+ Jahre Erfahrung</h5>
+                    <p class="card-text">Professionelle Produktion mit internationaler Anerkennung</p>
+                    <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <span class="badge bg-primary">Electronic Music</span>
+                        <span class="badge bg-primary">Mixing</span>
+                        <span class="badge bg-primary">Mastering</span>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row"><div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-title">Bereit zu starten?</h2>
+            <p class="section-subtitle">Kontaktiere uns oder buche jetzt einen Slot</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="{% url 'booking:booking' %}" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i>Jetzt buchen</a>
+                <a href="{% url 'booking:contact' %}" class="btn btn-outline-light"><i class="fas fa-envelope me-2"></i>Kontakt</a>
+            </div>
+        </div></div>
+    </div>
+</section>
+{% endblock %}
+
