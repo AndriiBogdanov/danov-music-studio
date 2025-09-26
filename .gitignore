@@ -126,3 +126,6 @@ staticfiles/
 # Large log/export files
 cursor_.md
 
+# Smart sync backups
+.git_backup_*
+
