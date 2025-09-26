@@ -129,3 +129,11 @@ cursor_.md
 # Smart sync backups
 .git_backup_*
 
+# Deployment scripts (problematic)
+deploy_auto.ps1
+deploy_mobile_fix.ps1
+deploy_simple.bat
+deploy_variants.ps1
+ssh_auto.ps1
+vps_deploy.ps1
+
