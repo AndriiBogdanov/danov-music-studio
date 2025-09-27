@@ -22,7 +22,7 @@
         <div class="row align-items-start">
             <!-- Mobile: Logo первый, Desktop: текст первый -->
             <div class="col-lg-6 hero-content order-2 order-lg-1">
-                <h1 class="display-4 fw-bold mb-5 mb-lg-4">
+                <h1 class="display-4 fw-bold mb-5 mb-lg-4 px-3 px-lg-0">
                     {% get_current_language as LANGUAGE_CODE %}
                     {% if LANGUAGE_CODE == 'ru' %}
                         Создавайте <span class="text-gradient">профессиональный звук</span> для ваших проектов
@@ -49,7 +49,7 @@
             <div class="col-lg-6 text-center order-1 order-lg-2">
                 <div class="hero-image" style="margin-top: -1rem;">
                     <img src="{% static 'images/Logo1.png' %}" alt="Danov Music Studio" class="img-fluid" loading="lazy" style="max-width: 600px; width: 100%; height: auto; filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 30px rgba(139, 92, 246, 0.4)) drop-shadow(0 0 60px rgba(139, 92, 246, 0.2));">
-                    <h3 class="text-white mt-0" style="font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(139, 92, 246, 0.3), 0 0 45px rgba(139, 92, 246, 0.2);">{% trans 'Music Production Studio' %}</h3>
+                    <h3 class="text-white" style="margin-top: -0.5rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(139, 92, 246, 0.3), 0 0 45px rgba(139, 92, 246, 0.2);">{% trans 'Music Production Studio' %}</h3>
                 </div>
             </div>
         </div>
