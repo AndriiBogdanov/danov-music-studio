@@ -222,6 +222,8 @@ body.home-page .hero-video-background video {
     background: rgba(255, 255, 255, 0.005);
     border-radius: 24px;
     padding: 2.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow: 
         0 10px 25px rgba(0, 0, 0, 0.06),
@@ -2249,4 +2251,11 @@ body.home-page .hero-video-background video {
     .navbar-toggler:hover .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(124, 58, 237, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
-}
+}/ *   M o b i l e   m a r g i n s   f o r   h e r o - c o n t e n t   * /  
+ @ m e d i a   ( m i n - w i d t h :   9 9 2 p x )   {  
+         . h e r o - c o n t e n t   {  
+                 m a r g i n - l e f t :   0   ! i m p o r t a n t ;  
+                 m a r g i n - r i g h t :   0   ! i m p o r t a n t ;  
+         }  
+ }  
+ 
