@@ -2,9 +2,120 @@
 
 {% block title %}About - Danov Music Studio{% endblock %}
 
+{% block body_class %}about-page{% endblock %}
+
 {% block content %}
 <!-- Hero Section -->
 <section class="hero" style="min-height: 45vh;">
+    <style>
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 15vh !important;
+                padding: 1rem 0 !important;
+            }
+            
+            .hero h1 {
+                font-size: 2rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .hero .lead {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.5rem !important;
+                font-weight: 600 !important;
+                color: #ffffff !important;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+                line-height: 1.4 !important;
+            }
+            
+            /* AGGRESSIVE CENTERING FOR ABOUT PAGE */
+            .col-lg-6:first-child {
+                text-align: center !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                margin: 0 auto !important;
+                display: block !important;
+                width: 100% !important;
+            }
+            
+            .col-lg-6:last-child {
+                text-align: center !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                margin: 0 auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                width: 100% !important;
+            }
+            
+            .row.g-3 {
+                justify-content: center !important;
+                margin: 0 auto !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+            }
+            
+            .col-md-6 {
+                flex: 0 0 auto !important;
+                width: auto !important;
+                margin: 0 0.5rem !important;
+                display: flex !important;
+                justify-content: center !important;
+            }
+            
+            .team-photo {
+                margin: 0 auto 1rem auto !important;
+                max-width: 200px !important;
+                width: 100% !important;
+                display: block !important;
+            }
+            
+            .card.mt-3 {
+                margin: 1rem auto 0 auto !important;
+                max-width: 400px !important;
+                width: 100% !important;
+                display: block !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 12vh !important;
+                padding: 0.5rem 0 !important;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+            
+            .hero .lead {
+                font-size: 1rem !important;
+                margin-bottom: 0.25rem !important;
+                font-weight: 600 !important;
+                color: #ffffff !important;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+                line-height: 1.4 !important;
+            }
+            
+            .col-lg-6:first-child {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            
+            .team-photo {
+                max-width: 150px !important;
+                margin: 0 auto 0.5rem auto !important;
+            }
+            
+            .card.mt-3 {
+                max-width: 300px !important;
+                margin: 0.5rem auto 0 auto !important;
+            }
+        }
+    </style>
     <!-- Background Video -->
     <div class="hero-video-background">
         {% load static %}
@@ -18,10 +129,10 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 hero-content">
-                <h1 class="display-4 fw-bold mb-4" style="font-size: 3.5rem;">
+                <h1 class="display-4 fw-bold mb-4">
                     About Danov Music Studio
                 </h1>
-                <p class="lead ukrainian-gradient">
+                <p class="lead fw-bold">
                     The first Ukrainian recording studio in Berlin
                 </p>
             </div>
@@ -33,41 +144,41 @@
 <section class="section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6" style="padding-right: 2rem;">
-                <h2 class="section-title text-start">DANOV MUSIC</h2>
-                <h3 class="text-accent mb-4">The first Ukrainian recording studio in Berlin</h3>
+            <div class="col-lg-6" style="padding-right: 2rem; text-align: center !important;">
+                <h2 class="section-title text-center">DANOV MUSIC</h2>
+                <h3 class="text-accent mb-4 text-center">The first Ukrainian recording studio in Berlin</h3>
                 
-                <p class="lead mb-4">
+                <p class="lead mb-4 text-center">
                     DANOV (Nikita Bogdanov) is Berlin-based music producer from Ukraine, who also founded the first Ukrainian studio in Berlin.
                 </p>
                 
-                <p class="mb-4">
+                <p class="mb-4 text-center">
                     A musical producer and DJ with over 17 years of experience in creating electronic music, mixing, and mastering. Formerly known as part of the duo Ost & Meyer.
                 </p>
                 
-                <div class="producer-info mb-4">
-                    <h4 class="text-accent">Nikita Bogdanov</h4>
-                    <p>
+                <div class="producer-info mb-4 text-center">
+                    <h4 class="text-accent text-center">Nikita Bogdanov</h4>
+                    <p class="text-center">
                         For years, his music has received repeated support from top global DJs, including David Guetta, Tiësto, Don Diablo, Armin van Buuren, Above & Beyond, Paul van Dyk, and many others. Currently, Nikita Bogdanov serves as a producer and composer for the artist Raja.
                     </p>
                 </div>
             </div>
             
-            <div class="col-lg-6" style="padding-left: 2rem;">
-                <div class="row g-3">
-                    <div class="col-md-6">
+            <div class="col-lg-6" style="padding-left: 2rem; text-align: center !important;">
+                <div class="row g-3 justify-content-center">
+                    <div class="col-md-6 text-center">
                         {% load static %}
-                        <div class="team-photo">
+                        <div class="team-photo mx-auto">
                             <img src="{% static 'images/Nikita1.png' %}" alt="Nikita Bogdanov" class="img-fluid rounded">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="team-photo">
+                    <div class="col-md-6 text-center">
+                        <div class="team-photo mx-auto">
                             <img src="{% static 'images/Nikita2.png' %}" alt="Nikita Bogdanov Studio" class="img-fluid rounded">
                         </div>
                     </div>
                 </div>
-                <div class="card mt-3">
+                <div class="card mt-3 mx-auto" style="max-width: 400px;">
                     <div class="card-body text-center">
                         <div class="service-icon">
                             <i class="fas fa-user-tie"></i>
@@ -196,7 +307,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="section" style="background: var(--dark-secondary);">
+<section class="section" style="background: var(--dark-secondary); margin-top: -2rem !important;">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">

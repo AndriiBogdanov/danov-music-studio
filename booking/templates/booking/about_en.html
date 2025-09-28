@@ -3,6 +3,21 @@
 {% block title %}About - Danov Music Studio{% endblock %}
 
 {% block content %}
+<style>
+    @media (max-width: 768px) {
+        /* Center only photos */
+        .team-photo {
+            margin: 0 auto 1rem auto !important;
+            max-width: 200px !important;
+        }
+        
+        /* Move only Professional Experience card left */
+        .card.mt-3 {
+            margin: 1rem auto 0 -1rem !important;
+            max-width: 400px !important;
+        }
+    }
+</style>
 <!-- Hero Section -->
 <section class="hero" style="min-height: 45vh;">
     <!-- Background Video -->
