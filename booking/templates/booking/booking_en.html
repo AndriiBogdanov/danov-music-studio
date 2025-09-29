@@ -57,7 +57,19 @@
 </section>
 
 <!-- Booking Form Section -->
-<section class="section">
+<section class="section" style="padding-bottom: 8rem !important;">
+	<style>
+		@media screen and (max-width: 768px) {
+			section.section:last-of-type {
+				padding-bottom: 8rem !important;
+			}
+		}
+		@media screen and (max-width: 480px) {
+			section.section:last-of-type {
+				padding-bottom: 10rem !important;
+			}
+		}
+	</style>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 mx-auto">
@@ -250,7 +262,25 @@
 				</div>
 				
 				<!-- Booking Info -->
-				<div class="row mt-5">
+				<div class="row mt-5 mb-5 booking-info-cards" style="margin-bottom: 4rem !important;">
+					<style>
+						@media screen and (max-width: 768px) {
+							.booking-info-cards {
+								margin-bottom: 6rem !important;
+							}
+							.row.booking-info-cards {
+								margin-bottom: 6rem !important;
+							}
+						}
+						@media screen and (max-width: 480px) {
+							.booking-info-cards {
+								margin-bottom: 8rem !important;
+							}
+							.row.booking-info-cards {
+								margin-bottom: 8rem !important;
+							}
+						}
+					</style>
 					<div class="col-md-4">
 						<div class="card text-center h-100">
 							<div class="card-body">
