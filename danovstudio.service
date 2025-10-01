@@ -1,0 +1,17 @@
+[Unit]
+Description=Danov Music Studio Django App
+After=network.target
+
+[Service]
+Type=exec
+User=nikit
+Group=nikit
+WorkingDirectory=/home/nikit/danov-studio
+Environment=PATH=/home/nikit/danov-studio/venv/bin
+ExecStart=/home/nikit/danov-studio/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 danovmusic_studio.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
