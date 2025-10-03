@@ -44,7 +44,7 @@
     
     <!-- Preload critical resources -->
     <link rel="preload" href="{% static 'css/style.css' %}" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" crossorigin>
     
     <!-- Prefetch main pages for faster navigation -->
     <link rel="prefetch" href="{% url 'booking:home' %}">
@@ -73,9 +73,9 @@
     {% endif %}
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" crossorigin onerror="console.log('Google Fonts failed to load')">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" crossorigin onerror="console.log('Google Fonts failed to load')">
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" onerror="console.log('Font Awesome failed to load')">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" onerror="console.log('Font Awesome failed to load')" media="print" onload="this.media='all'">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -128,7 +128,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="/">
+                <a class="navbar-brand d-flex align-items-center" href="{% url 'booking:home' %}">
                     <img src="{% static 'images/Favicon.png' %}" alt="Favicon" width="44" height="44" class="me-2" loading="lazy">
                     <img src="{% static 'images/Logo1.png' %}" alt="Danov Music Studio Logo" height="56" style="margin-left: 8px;" loading="lazy">
                 </a>

@@ -29,12 +29,12 @@ print_error() {
 }
 
 # Configuration - EDIT THESE VALUES
-SERVER_IP="217.154.120.187"        # Your VPS server IP
-SERVER_USER="adminuser"             # SSH user
-SSH_PASS="8mAsOR27"                 # SSH password
-DOMAIN="217.154.120.187"            # Using IP as domain for now
-CUSTOM_PORT="8847"                  # Custom port for security
-PROJECT_DIR="/var/www/danov-studio"
+SERVER_IP="51.75.72.122"                # Your VPS server IP
+SERVER_USER="nikit"                     # SSH user
+SSH_PASS="Qaz444666!"                   # SSH password
+DOMAIN="www.danovmusic.com"             # Domain name
+CUSTOM_PORT="2222"                      # SSH port
+PROJECT_DIR="/home/nikit/danov-studio"
 
 print_status "🚀 Starting deployment to VPS..."
 
@@ -78,13 +78,13 @@ print_success "Package created: danov-studio-deploy.tar.gz"
 
 # Upload package to server
 print_status "Uploading package to server..."
-sshpass -p "$SSH_PASS" scp -o StrictHostKeyChecking=no danov-studio-deploy.tar.gz $SERVER_USER@$SERVER_IP:/tmp/
+sshpass -p "$SSH_PASS" scp -P $CUSTOM_PORT -o StrictHostKeyChecking=no danov-studio-deploy.tar.gz $SERVER_USER@$SERVER_IP:/tmp/
 
 print_success "Package uploaded to server"
 
 # Connect to server and deploy
 print_status "Connecting to server and deploying..."
-sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << EOF
+sshpass -p "$SSH_PASS" ssh -p $CUSTOM_PORT -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << EOF
 set -e
 
 echo "🔧 Setting up environment on server..."
@@ -197,14 +197,19 @@ sudo supervisorctl start danov-studio
 sudo systemctl restart nginx
 sudo systemctl enable nginx supervisor
 
+# Setup SSL Certificate
+echo "🔒 Setting up SSL certificate..."
+sudo certbot --nginx -d $DOMAIN --non-interactive --agree-tos --email admin@danovmusic.com
+
 # Setup firewall
 sudo ufw allow 22
-sudo ufw allow $CUSTOM_PORT
+sudo ufw allow 80
+sudo ufw allow 443
 echo "y" | sudo ufw enable
 
 echo "🎉 Deployment completed!"
-echo "🌐 Your site should be available at: http://$DOMAIN:$CUSTOM_PORT"
-echo "🔒 Custom port $CUSTOM_PORT used for security"
+echo "🌐 Your site should be available at: https://$DOMAIN"
+echo "🔒 SSL certificate installed"
 
 EOF
 

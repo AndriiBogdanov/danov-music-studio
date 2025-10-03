@@ -21,13 +21,13 @@ class BookingForm(forms.ModelForm):
         # Set choices for service field with prices
         self.fields['service'].choices = [
             ('', 'Select a service...'),
-            ('recording', 'Recording - 70€/hour'),
+            ('recording', 'Recording - 75€/hour'),
             ('mixing', 'Mixing - from 200€'),
             ('mastering', 'Mastering - 50€/hour'),
             ('production', 'Music Production - from 400€'),
             ('vocal_cleanup', 'Vocal Cleanup - from 100€ to 200€'),
             ('vocal_tuning', 'Vocal Tuning - 100€/hour'),
-            ('hourly', 'Hourly Rate - 70€/hour'),
+            ('hourly', 'Hourly Rate - 75€/hour'),
             ('daily', 'Daily Rental - 450€/day'),
         ]
     

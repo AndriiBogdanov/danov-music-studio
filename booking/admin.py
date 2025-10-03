@@ -23,13 +23,13 @@ class BookingAdmin(admin.ModelAdmin):
     def service_display(self, obj):
         """Display service with price information"""
         service_prices = {
-            'recording': '70€/hour',
+            'recording': '75€/hour',
             'mixing': 'from 200€',
             'mastering': '50€/hour',
             'production': 'from 400€',
             'vocal_cleanup': 'from 100€ to 200€',
             'vocal_tuning': '100€/hour',
-            'hourly': '70€/hour',
+            'hourly': '75€/hour',
             'daily': '450€/day',
         }
         service_name = obj.get_service_display()

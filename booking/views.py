@@ -576,7 +576,7 @@ def booking_view(request):
     services_info = {
         'recording': {
             'name': 'Recording',
-            'price': '70€/hour',
+            'price': '75€/hour',
             'description': 'Professional recording with high-quality equipment'
         },
         'mixing': {
@@ -606,7 +606,7 @@ def booking_view(request):
         },
         'hourly': {
             'name': 'Hourly Rate',
-            'price': '70€/hour',
+            'price': '75€/hour',
             'description': 'Professional recording and basic processing'
         },
         'daily': {
@@ -779,7 +779,7 @@ def landing(request, slug: str):
     services_i18n = {
         'en': {
             'recording': {
-                'name': 'Recording', 'price': '70€/hour', 'desc': 'Record with precision using high-end microphones and treated room.',
+                'name': 'Recording', 'price': '75€/hour', 'desc': 'Record with precision using high-end microphones and treated room.',
                 'benefits': ['Professional microphones', 'Acoustic treatment', 'Basic processing', 'Compression and EQ']
             },
             'mixing': {
@@ -805,7 +805,7 @@ def landing(request, slug: str):
         },
         'ru': {
             'recording': {
-                'name': 'Запись', 'price': '70€/час', 'desc': 'Точная запись с премиум‑микрофонами и обработанной комнатой.',
+                'name': 'Запись', 'price': '75€/час', 'desc': 'Точная запись с премиум‑микрофонами и обработанной комнатой.',
                 'benefits': ['Профессиональные микрофоны', 'Акустическая обработка', 'Базовая обработка', 'Компрессия и EQ']
             },
             'mixing': {
@@ -831,7 +831,7 @@ def landing(request, slug: str):
         },
         'uk': {
             'recording': {
-                'name': 'Запис', 'price': '70€/год', 'desc': 'Точний запис з преміум мікрофонами та обробленою кімнатою.',
+                'name': 'Запис', 'price': '75€/год', 'desc': 'Точний запис з преміум мікрофонами та обробленою кімнатою.',
                 'benefits': ['Професійні мікрофони', 'Акустична обробка', 'Базова обробка', 'Компресія та EQ']
             },
             'mixing': {
@@ -857,7 +857,7 @@ def landing(request, slug: str):
         },
         'de': {
             'recording': {
-                'name': 'Recording', 'price': '70€/Stunde', 'desc': 'Präzise Aufnahme mit High‑End Mikrofonen und Raumakustik.',
+                'name': 'Recording', 'price': '75€/Stunde', 'desc': 'Präzise Aufnahme mit High‑End Mikrofonen und Raumakustik.',
                 'benefits': ['Profi‑Mikrofone', 'Akustikbehandlung', 'Basis‑Bearbeitung', 'Kompression und EQ']
             },
             'mixing': {
